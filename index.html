@@ -1,0 +1,1354 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gianluca Centraco — Growth Consultant</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #000000;
+      --bg2: #080808;
+      --teal: #c8ff00;
+      --teal-dim: rgba(200,255,0,0.45);
+      --teal-glow: rgba(200,255,0,0.14);
+      --white: oklch(0.97 0.005 240);
+      --muted: oklch(0.60 0.01 240);
+      --border: oklch(0.22 0.01 240);
+      --font-display: 'Syne', sans-serif;
+      --font-body: 'Space Grotesk', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--white);
+      font-family: var(--font-body);
+      font-weight: 400;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 22px 48px;
+      background: linear-gradient(to bottom, var(--bg) 40%, transparent);
+    }
+
+    .nav-logo {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--white);
+      text-decoration: none;
+    }
+
+    .nav-cta {
+      font-family: var(--font-body);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--teal);
+      text-decoration: none;
+      padding: 10px 22px;
+      border: 1.5px solid var(--teal);
+      border-radius: 3px;
+      transition: background 0.2s, color 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .nav-cta:hover { background: var(--teal); color: #000; }
+
+    .nav-link {
+      font-family: var(--font-body);
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-link:hover { color: var(--white); }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 120px 60px 80px;
+      position: relative;
+      overflow: hidden;
+    }
+    #hero-stars {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .hero-fade {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+      background: linear-gradient(to right,
+        rgba(0,0,0,0.75) 0%,
+        rgba(0,0,0,0.55) 25%,
+        rgba(0,0,0,0.20) 50%,
+        rgba(0,0,0,0) 70%);
+    }
+
+    .hero-inner {
+      position: relative;
+      max-width: 600px;
+      z-index: 5;
+    }
+
+    .hero-label {
+      font-family: var(--font-body);
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 28px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .hero-label::before {
+      content: '';
+      display: block;
+      width: 32px; height: 1px;
+      background: var(--teal);
+    }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: clamp(3rem, 7vw, 6rem);
+      line-height: 1.0;
+      letter-spacing: -0.02em;
+      color: var(--white);
+      margin-bottom: 32px;
+    }
+
+    .hero-title em {
+      font-style: normal;
+      color: var(--teal);
+    }
+
+    .hero-sub {
+      font-size: 1.15rem;
+      font-weight: 300;
+      color: var(--muted);
+      line-height: 1.7;
+      max-width: 520px;
+      margin-bottom: 52px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--teal);
+      color: var(--bg);
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 0.88rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding: 16px 34px;
+      border-radius: 2px;
+      text-decoration: none;
+      transition: opacity 0.2s, transform 0.2s;
+      border: none;
+      cursor: pointer;
+    }
+    .btn-primary:hover { opacity: 0.88; transform: translateY(-1px); }
+
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--muted);
+      font-family: var(--font-body);
+      font-size: 0.88rem;
+      font-weight: 400;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .btn-ghost:hover { color: var(--white); }
+
+    .hero-scroll {
+      position: absolute;
+      bottom: 40px; left: 60px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.72rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .scroll-line {
+      width: 40px; height: 1px;
+      background: var(--border);
+    }
+
+    /* ── SECTION BASE ── */
+    section { position: relative; }
+
+    .section-label {
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+    }
+
+    /* ── INTRO STRIP ── */
+    .intro {
+      padding: 80px 48px;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .intro-quote {
+      font-family: var(--font-display);
+      font-size: clamp(1.3rem, 2.5vw, 1.9rem);
+      font-weight: 600;
+      line-height: 1.4;
+      color: var(--white);
+    }
+    .intro-quote span { color: var(--teal); }
+
+    .intro-text {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: var(--muted);
+    }
+
+    /* ── SERVICES SCROLL ── */
+    .services-scroll {
+      height: 400vh;
+      position: relative;
+    }
+    .services-pin {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      overflow: hidden;
+      background: #000;
+    }
+    #bh-main {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+    .services-track {
+      position: absolute;
+      top: 0; left: 0;
+      width: 300vw; height: 100vh;
+      display: flex;
+      z-index: 3;
+      will-change: transform;
+    }
+    .srv-panel {
+      width: 100vw; height: 100vh;
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 64px 80px;
+    }
+    .srv-panel-number {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: #c8ff00;
+      margin-bottom: 20px;
+      font-family: var(--font-body);
+    }
+    .srv-panel-title {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: clamp(2.6rem, 5vw, 4.8rem);
+      letter-spacing: -0.03em;
+      line-height: 1.0;
+      color: #ffffff;
+      margin-bottom: 22px;
+      text-shadow: 0 0 80px rgba(200,255,0,0.08);
+    }
+    .srv-panel-body {
+      font-size: 1rem;
+      line-height: 1.75;
+      color: rgba(255,255,255,0.45);
+      max-width: 460px;
+      margin-bottom: 28px;
+    }
+    .srv-panel-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .tag {
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #c8ff00;
+      border: 1px solid rgba(200,255,0,0.3);
+      padding: 5px 12px;
+      border-radius: 2px;
+      background: rgba(200,255,0,0.05);
+    }
+    .srv-progress {
+      position: absolute;
+      bottom: 44px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 10px;
+      z-index: 10;
+    }
+    .srv-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.2);
+      transition: background 0.4s, transform 0.4s;
+      cursor: pointer;
+    }
+    .srv-dot.active {
+      background: #c8ff00;
+      transform: scale(1.5);
+    }
+    .srv-scroll-hint {
+      position: absolute;
+      bottom: 44px;
+      right: 56px;
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.25);
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-body);
+    }
+
+    /* ── PROCESS ── */
+    .process {
+      padding: 120px 48px;
+      border-top: 1px solid var(--border);
+    }
+
+    .process-header {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: end;
+      margin-bottom: 80px;
+    }
+
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .step {
+      padding: 40px 32px;
+      border-right: 1px solid var(--border);
+      position: relative;
+    }
+    .step:last-child { border-right: none; }
+
+    .step-num {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      color: var(--teal);
+      margin-bottom: 14px;
+    }
+
+    .step-title {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 1.05rem;
+      margin-bottom: 12px;
+    }
+
+    .step-body {
+      font-size: 0.87rem;
+      line-height: 1.7;
+      color: var(--muted);
+    }
+
+    .process-timeline {
+      margin-top: 48px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+    }
+    .tl-track {
+      display: flex;
+      width: 100%;
+      height: 6px;
+      border-radius: 3px;
+      overflow: hidden;
+      gap: 2px;
+      margin-bottom: 10px;
+    }
+    .tl-segment {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+    .tl-bar {
+      height: 6px;
+      border-radius: 2px;
+      width: 100%;
+    }
+    .tl-label {
+      font-size: 0.62rem;
+      letter-spacing: 0.06em;
+      color: var(--muted);
+      margin-top: 6px;
+      white-space: nowrap;
+    }
+    .tl-weeks {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.65rem;
+      color: var(--border);
+      letter-spacing: 0.05em;
+      margin-top: 4px;
+      font-family: var(--font-body);
+    }
+
+    /* ── CTA ── */
+    .cta-section {
+      padding: 0 48px 120px;
+    }
+
+    .cta-box {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      padding: 80px;
+      border-radius: 4px;
+      background: var(--bg2);
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .cta-glow {
+      position: absolute;
+      width: 400px; height: 400px;
+      border-radius: 50%;
+      background: radial-gradient(circle, oklch(0.68 0.14 188 / 0.08) 0%, transparent 70%);
+      bottom: -100px; right: -100px;
+      pointer-events: none;
+    }
+
+    .cta-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(200,255,0,0.08);
+      border: 1px solid rgba(200,255,0,0.3);
+      color: var(--teal);
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 7px 14px;
+      border-radius: 2px;
+      margin-bottom: 24px;
+    }
+    .cta-badge::before {
+      content: '';
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--teal);
+      animation: pulse 2s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.8); }
+    }
+
+    .cta-title {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: clamp(2rem, 4vw, 3rem);
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+
+    .cta-sub {
+      font-size: 1rem;
+      color: var(--muted);
+      line-height: 1.7;
+      max-width: 480px;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 48px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 32px;
+    }
+
+    .footer-left p {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-top: 8px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 32px;
+    }
+    .footer-links a {
+      font-size: 0.82rem;
+      color: var(--muted);
+      text-decoration: none;
+      letter-spacing: 0.06em;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--teal); }
+
+    /* ── ANIMATIONS ── */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 900px) {
+      nav { padding: 18px 20px; }
+      .nav-logo { font-size: 0.85rem; }
+      .hero { padding: 100px 24px 60px; }
+      .hero-title { font-size: clamp(2.6rem, 11vw, 4rem); }
+      .intro { grid-template-columns: 1fr; padding: 60px 24px; gap: 32px; }
+      .services-scroll { height: 500vh; }
+      .srv-panel { padding: 40px 24px 80px; justify-content: flex-end; }
+      .srv-panel-title { font-size: clamp(2rem, 9vw, 3rem); }
+      .srv-panel-body { font-size: 0.88rem; max-width: 100%; }
+      .srv-progress { bottom: 32px; }
+      .srv-scroll-hint { display: none; }
+      .process { padding: 80px 24px; }
+      .process-header { grid-template-columns: 1fr; gap: 24px; }
+      .process-steps { grid-template-columns: 1fr 1fr; }
+      .step { border-right: none; border-bottom: 1px solid var(--border); padding: 32px 0; }
+      .cta-section { padding: 0 24px 80px; }
+      .cta-box { grid-template-columns: 1fr; padding: 40px 28px; gap: 32px; }
+      footer { padding: 32px 24px; grid-template-columns: 1fr; }
+      .footer-links { flex-wrap: wrap; gap: 20px; }
+    }
+    @media (max-width: 480px) {
+      .hero-title { font-size: clamp(2.2rem, 12vw, 3rem); }
+      .srv-panel-title { font-size: clamp(1.7rem, 10vw, 2.5rem); }
+      .process-steps { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a class="nav-logo" href="index.html">Gianluca Centraco</a>
+    <div style="display:flex;align-items:center;gap:32px;">
+      <a class="nav-link" href="chi-sono.html">Chi sono</a>
+      <a class="nav-cta" href="https://calendly.com/consulenza-gianlucacentra/30min" target="_blank" rel="noopener">Call gratuita →</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <canvas id="hero-stars"></canvas>
+    <div class="hero-fade"></div>
+
+    <div class="hero-inner">
+      <div class="hero-label">Growth Consultant</div>
+      <h1 class="hero-title">
+        Valida.<br>
+        Misura.<br>
+        <em>Scala.</em>
+      </h1>
+      <p class="hero-sub">
+        Aiuto founder e business digitali a validare idee, misurare ciò che conta e scalare ciò che funziona.
+      </p>
+      <div class="hero-actions">
+        <a class="btn-primary" href="https://calendly.com/consulenza-gianlucacentra/30min" target="_blank" rel="noopener">
+          Prenota una call gratuita
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </a>
+        <a class="btn-ghost" href="#services">
+          Scopri i servizi ↓
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-scroll">
+      <span class="scroll-line"></span>
+      Scroll
+    </div>
+  </section>
+
+  <!-- INTRO STRIP -->
+  <section class="intro fade-up">
+    <div class="intro-quote">
+      "Un algoritmo è potente quanto i <span>dati</span> che riceve."
+    </div>
+    <p class="intro-text">
+      Lavoro con founder e team digitali su tre leve:<br>infrastruttura dati, validazione rapida e scaling.<br>Progetto sistemi per testare velocemente, misurare ciò che conta e far crescere solo ciò che funziona.<br>Ogni decisione parte dai dati e si misura su KPI chiari, definiti insieme.
+    </p>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services-scroll" id="services">
+    <div class="services-pin">
+      <canvas id="bh-main"></canvas>
+      <div class="services-track">
+
+        <div class="srv-panel">
+          <div class="srv-panel-number">01 &mdash; KYC: Tracking &amp; Data</div>
+          <h2 class="srv-panel-title">Conosci ogni<br>movimento<br>dei tuoi utenti.</h2>
+          <p class="srv-panel-body">Costruisco infrastrutture di tracking per definire KPI, conoscere il target, e misurare il comportamento degli utenti. Questo ci aiuterà a misurare con precisione le campagne di validazione della fase 2. Senza dati affidabili, ogni decisione è un salto nel buio.</p>
+          <div class="srv-panel-tags">
+            <span class="tag">GA4</span>
+            <span class="tag">GTM</span>
+            <span class="tag">KPI Definition</span>
+            <span class="tag">Funnel analysis</span>
+          </div>
+        </div>
+
+        <div class="srv-panel">
+          <div class="srv-panel-number">02 &mdash; Validazione: ADV &amp; Performance Marketing</div>
+          <h2 class="srv-panel-title">Valida prima<br>di investire<br>in scala.</h2>
+          <p class="srv-panel-body">Una volta pronta l'architettura dei dati, attivo campagne ADV mirate a basso budget per testare rapidamente le idee e misurare l'interesse reale.</p>
+          <div class="srv-panel-tags">
+            <span class="tag">Meta Ads</span>
+            <span class="tag">Google Ads</span>
+            <span class="tag">Fake Door Testing</span>
+            <span class="tag">Landing Page Creation</span>
+          </div>
+        </div>
+
+        <div class="srv-panel">
+          <div class="srv-panel-number">03 &mdash; Growth: Product Launch / Scaling</div>
+          <h2 class="srv-panel-title">Scala ciò<br>che funziona,<br>con metodo.</h2>
+          <p class="srv-panel-body">Validato ciò che funziona, si scala. A questo punto avremo identificato le leve di crescita e costruito campagne ADV sostenibili e ottimizzate. Il mio focus diventa il tuo ROAS.</p>
+          <div class="srv-panel-tags">
+            <span class="tag">Growth loops</span>
+            <span class="tag">ADV scaling</span>
+            <span class="tag">ROAS Optimization</span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="srv-progress">
+        <span class="srv-dot active"></span>
+        <span class="srv-dot"></span>
+        <span class="srv-dot"></span>
+      </div>
+      <div class="srv-scroll-hint">
+        <span style="width:28px;height:1px;background:currentColor;display:inline-block;"></span>
+        Scroll
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="process fade-up">
+    <div class="process-header">
+      <div>
+        <div class="section-label">Come lavoro</div>
+        <h2 class="section-title">Un metodo<br>in quattro fasi.</h2>
+      </div>
+      <p style="color:var(--muted);font-size:0.95rem;line-height:1.75;max-width:340px;">
+        Ogni collaborazione segue un processo strutturato: diagnostico i problemi, sistemo l'architettura dei dati e ricostruisco infrastrutture pubblicitarie pronte per validare e/o scalare.
+      </p>
+    </div>
+    <div class="process-steps">
+      <div class="step">
+        <div class="step-num">01</div>
+        <div class="step-title">Diagnosi</div>
+        <p class="step-body">Analisi del business, dei dati esistenti (quando ci sono) e degli obiettivi. Diagnostico i problemi, li documento e li correggo.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <div class="step-title">Tracking Setup</div>
+        <p class="step-body">Implemento l'infrastruttura dati per lanciare campagne ADV pronte a validare ed a scalare.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <div class="step-title">Test &amp; Validate</div>
+        <p class="step-body">Lancio esperimenti rapidi e a basso budget per validare ipotesi prima di scalare.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">04</div>
+        <div class="step-title">Scale</div>
+        <p class="step-body">Identifico le leve che funzionano e costruisco il sistema per scalarle in modo efficiente.</p>
+      </div>
+    </div>
+
+    <div class="process-timeline">
+      <div class="tl-track">
+        <div class="tl-segment" style="width:calc(1/12*100%)">
+          <div class="tl-bar" style="background:var(--teal);"></div>
+          <div class="tl-label">W0–1</div>
+        </div>
+        <div class="tl-segment" style="width:calc(1/12*100%)">
+          <div class="tl-bar" style="background:var(--teal);opacity:0.75;"></div>
+          <div class="tl-label">W1–2</div>
+        </div>
+        <div class="tl-segment" style="width:calc(5/12*100%)">
+          <div class="tl-bar" style="background:var(--teal);opacity:0.50;"></div>
+          <div class="tl-label">W2–7</div>
+        </div>
+        <div class="tl-segment" style="width:calc(5/12*100%)">
+          <div class="tl-bar" style="background:var(--teal);opacity:0.28;"></div>
+          <div class="tl-label">W7–12</div>
+        </div>
+      </div>
+      <div class="tl-weeks">
+        <span>0</span><span>1</span><span>2</span><span style="opacity:0"></span><span style="opacity:0"></span><span style="opacity:0"></span><span style="opacity:0"></span><span>7</span><span style="opacity:0"></span><span style="opacity:0"></span><span style="opacity:0"></span><span style="opacity:0"></span><span>12</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section fade-up" id="cta">
+    <div class="cta-box">
+      <div class="cta-glow"></div>
+      <div>
+        <div class="cta-badge">Disponibile ora</div>
+        <h2 class="cta-title">Parliamo del<br>tuo progetto.</h2>
+        <p class="cta-sub">
+          20 minuti gratuiti per capire dove sei, dove vuoi arrivare e se posso aiutarti. Nessun impegno.
+        </p>
+        <br><br>
+        <a class="btn-primary" href="https://calendly.com/consulenza-gianlucacentra/30min" target="_blank" rel="noopener">
+          Prenota la call gratuita — 20 min
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-left">
+      <div class="nav-logo" style="font-family:var(--font-display);font-weight:700;font-size:0.95rem;letter-spacing:0.08em;text-transform:uppercase;">Gianluca Centraco</div>
+      <p>Growth Consultant · Torino &nbsp;·&nbsp; P.IVA: 13443610012</p>
+    </div>
+    <div class="footer-links">
+      <a href="https://www.linkedin.com/in/gianluca-centraco/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="mailto:consulenza@gianlucacentra.com">Email</a>
+      <a href="https://calendly.com/consulenza-gianlucacentra/30min" target="_blank" rel="noopener">Prenota una call</a>
+    </div>
+  </footer>
+
+  <!-- HERO SOLAR SYSTEM -->
+  <script>
+  (function(){
+    const c = document.getElementById('hero-stars');
+    if (!c) return;
+    const ctx = c.getContext('2d');
+    let W, H;
+    let bgStars = [];
+    let centerX, centerY, scale;
+
+    // Planets: orbitR & r are in normalized "scale" units (multiplied by `scale`).
+    // speed is angular velocity in radians per frame (~60fps).
+    const PLANETS = [
+      { name: 'Mercury', orbitR: 0.13, r: 2.4, color: '#b8b3a8', speed: 0.012, angle: 0.4 },
+      { name: 'Venus',   orbitR: 0.20, r: 4.2, color: '#e8c878', speed: 0.0085, angle: 2.1 },
+      { name: 'Earth',   orbitR: 0.28, r: 4.8, color: '#5a92e8', speed: 0.0065, angle: 4.5, moon: { d: 12, r: 1.4, speed: 0.05, angle: 0 } },
+      { name: 'Mars',    orbitR: 0.36, r: 3.4, color: '#d96a45', speed: 0.0050, angle: 0.9 },
+      { name: 'Jupiter', orbitR: 0.55, r: 11,  color: '#d4a574', speed: 0.0026, angle: 3.7, bands: true },
+      { name: 'Saturn',  orbitR: 0.78, r: 9,   color: '#e8d8a0', speed: 0.0019, angle: 1.6, rings: true },
+    ];
+
+    function compute(){
+      // Solar system anchored to right side of canvas, vertically centred.
+      scale = Math.min(W * 0.36, H * 0.46);
+      centerX = W * 0.68;
+      centerY = H * 0.50;
+    }
+
+    function resize(){
+      W = c.width = c.offsetWidth;
+      H = c.height = c.offsetHeight;
+      compute();
+
+      bgStars = [];
+      const bgN = Math.max(380, Math.floor(W * H / 1700));
+      for (let i = 0; i < bgN; i++) {
+        bgStars.push({
+          x: Math.random() * W,
+          y: Math.random() * H,
+          r: Math.random() * 0.95 + 0.15,
+          a: Math.random() * 0.55 + 0.05,
+          sp: 0.2 + Math.random() * 0.6,
+          ph: Math.random() * Math.PI * 2,
+        });
+      }
+    }
+
+    function drawSun(time){
+      const sunR = Math.max(18, scale * 0.075);
+      // Outer corona
+      const corona = ctx.createRadialGradient(centerX, centerY, sunR * 0.5, centerX, centerY, sunR * 5);
+      corona.addColorStop(0, 'rgba(255,210,120,0.45)');
+      corona.addColorStop(0.35, 'rgba(255,170,60,0.18)');
+      corona.addColorStop(1, 'rgba(255,90,0,0)');
+      ctx.beginPath();
+      ctx.arc(centerX, centerY, sunR * 5, 0, Math.PI * 2);
+      ctx.fillStyle = corona;
+      ctx.fill();
+
+      // Inner glow with subtle pulse
+      const pulse = 1 + 0.04 * Math.sin(time * 1.4);
+      const r = sunR * pulse;
+      const sun = ctx.createRadialGradient(centerX, centerY, 0, centerX, centerY, r);
+      sun.addColorStop(0, '#fff8e0');
+      sun.addColorStop(0.55, '#ffd060');
+      sun.addColorStop(1, '#ff8820');
+      ctx.beginPath();
+      ctx.arc(centerX, centerY, r, 0, Math.PI * 2);
+      ctx.fillStyle = sun;
+      ctx.fill();
+    }
+
+    function drawOrbits(){
+      ctx.strokeStyle = 'rgba(200,220,255,0.07)';
+      ctx.lineWidth = 0.6;
+      PLANETS.forEach(p => {
+        ctx.beginPath();
+        ctx.arc(centerX, centerY, p.orbitR * scale, 0, Math.PI * 2);
+        ctx.stroke();
+      });
+    }
+
+    function drawPlanet(p){
+      p.angle += p.speed;
+      const px = centerX + Math.cos(p.angle) * p.orbitR * scale;
+      const py = centerY + Math.sin(p.angle) * p.orbitR * scale;
+
+      // Soft glow halo
+      const halo = ctx.createRadialGradient(px, py, 0, px, py, p.r * 3.5);
+      halo.addColorStop(0, p.color + 'cc');
+      halo.addColorStop(0.5, p.color + '33');
+      halo.addColorStop(1, p.color + '00');
+      ctx.beginPath();
+      ctx.arc(px, py, p.r * 3.5, 0, Math.PI * 2);
+      ctx.fillStyle = halo;
+      ctx.fill();
+
+      // Saturn rings — drawn behind body
+      if (p.rings) {
+        ctx.save();
+        ctx.translate(px, py);
+        ctx.rotate(-0.45);
+        ctx.beginPath();
+        ctx.ellipse(0, 0, p.r * 2.2, p.r * 0.55, 0, 0, Math.PI * 2);
+        ctx.strokeStyle = 'rgba(230,210,160,0.55)';
+        ctx.lineWidth = 1.6;
+        ctx.stroke();
+        ctx.beginPath();
+        ctx.ellipse(0, 0, p.r * 2.65, p.r * 0.66, 0, 0, Math.PI * 2);
+        ctx.strokeStyle = 'rgba(230,210,160,0.30)';
+        ctx.lineWidth = 1.2;
+        ctx.stroke();
+        ctx.restore();
+      }
+
+      // Planet body
+      const body = ctx.createRadialGradient(px - p.r * 0.4, py - p.r * 0.4, 0, px, py, p.r);
+      body.addColorStop(0, lighten(p.color, 0.25));
+      body.addColorStop(1, p.color);
+      ctx.beginPath();
+      ctx.arc(px, py, p.r, 0, Math.PI * 2);
+      ctx.fillStyle = body;
+      ctx.fill();
+
+      // Jupiter bands
+      if (p.bands) {
+        ctx.save();
+        ctx.beginPath();
+        ctx.arc(px, py, p.r, 0, Math.PI * 2);
+        ctx.clip();
+        ctx.strokeStyle = 'rgba(120,80,40,0.35)';
+        ctx.lineWidth = 1;
+        for (let i = -2; i <= 2; i++) {
+          ctx.beginPath();
+          ctx.moveTo(px - p.r, py + i * p.r * 0.32);
+          ctx.lineTo(px + p.r, py + i * p.r * 0.32);
+          ctx.stroke();
+        }
+        ctx.restore();
+      }
+
+      // Moon (Earth)
+      if (p.moon) {
+        p.moon.angle += p.moon.speed;
+        const mx = px + Math.cos(p.moon.angle) * p.moon.d;
+        const my = py + Math.sin(p.moon.angle) * p.moon.d;
+        ctx.beginPath();
+        ctx.arc(mx, my, p.moon.r, 0, Math.PI * 2);
+        ctx.fillStyle = '#cfcfd8';
+        ctx.fill();
+      }
+    }
+
+    function lighten(hex, amount){
+      const n = parseInt(hex.slice(1), 16);
+      const r = Math.min(255, ((n >> 16) & 0xff) + Math.round(255 * amount));
+      const g = Math.min(255, ((n >> 8) & 0xff) + Math.round(255 * amount));
+      const b = Math.min(255, (n & 0xff) + Math.round(255 * amount));
+      return `rgb(${r},${g},${b})`;
+    }
+
+    function tick(t){
+      requestAnimationFrame(tick);
+      const time = t * 0.001;
+
+      ctx.clearRect(0, 0, W, H);
+      ctx.fillStyle = '#000';
+      ctx.fillRect(0, 0, W, H);
+
+      // Background star field with twinkle
+      bgStars.forEach(s => {
+        const a = s.a * (0.55 + 0.45 * Math.sin(time * s.sp + s.ph));
+        ctx.beginPath();
+        ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(220,225,235,${a})`;
+        ctx.fill();
+      });
+
+      drawOrbits();
+      drawSun(time);
+      PLANETS.forEach(drawPlanet);
+    }
+
+    resize();
+    requestAnimationFrame(tick);
+    new ResizeObserver(resize).observe(c.parentElement);
+  })();
+  </script>
+
+  <!-- BLACK HOLE ANIMATION -->
+  <script>
+  (function () {
+    const canvas = document.getElementById('bh-main');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+
+    function easeOutCubic(t) { return 1 - Math.pow(1 - t, 3); }
+    function easeOutExpo(t)  { return t >= 1 ? 1 : 1 - Math.pow(2, -10 * t); }
+    function easeInExpo(t)   { return t <= 0 ? 0 : Math.pow(2, 10 * t - 10); }
+    function easeInCubic(t)  { return t * t * t; }
+    function easeInOutCubic(t){ return t < 0.5 ? 4*t*t*t : 1 - Math.pow(-2*t+2,3)/2; }
+
+    function applyEase(ease, t) {
+      if (ease === 'outCubic') return easeOutCubic(t);
+      if (ease === 'outExpo')  return easeOutExpo(t);
+      if (ease === 'inExpo')   return easeInExpo(t);
+      return t;
+    }
+    function tweenVal(start, end, p, ease) {
+      return start + (end - start) * applyEase(ease, p);
+    }
+
+    let W, H, dpi;
+    let bhProgress = 0;
+    let time = 0;
+
+    const TOTAL_DISCS = 150;
+    const TOTAL_DOTS  = 14000;
+    let discs = [], dots_arr = [];
+    let startDisc = {};
+
+    let pulses = [];
+    let nextPulseAt = 0;
+
+    function resize() {
+      const pin = canvas.parentElement;
+      W = pin.offsetWidth;
+      H = pin.offsetHeight;
+      dpi = window.devicePixelRatio || 1;
+      canvas.width  = W * dpi;
+      canvas.height = H * dpi;
+      initGraphics();
+    }
+
+    function initGraphics() {
+      startDisc = { x: W * 0.5, y: H * 0, w: W * 1, h: H * 1 };
+      initDiscs();
+      initDots();
+    }
+
+    function tweenDisc(disc) {
+      const scaleX = tweenVal(1, 0, disc.p, 'outCubic');
+      const scaleY = tweenVal(1, 0, disc.p, 'outExpo');
+      disc.sx = scaleX;
+      disc.sy = scaleY;
+      disc.w  = startDisc.w * scaleX;
+      disc.h  = startDisc.h * scaleY;
+      disc.x  = startDisc.x;
+      disc.y  = startDisc.y + disc.p * startDisc.h;
+      return disc;
+    }
+
+    function initDiscs() {
+      discs = [];
+      for (let i = 0; i < TOTAL_DISCS; i++) {
+        discs.push(tweenDisc({ p: i / TOTAL_DISCS }));
+      }
+    }
+
+    function initDots() {
+      dots_arr = [];
+      for (let i = 0; i < TOTAL_DOTS; i++) {
+        const disc = discs[Math.floor(discs.length * Math.random())];
+        const v = Math.floor(160 + Math.random() * 80);
+        dots_arr.push({
+          d: disc,
+          c: `rgb(${v},${v},${v})`,
+          p: Math.random(),
+          o: 0.3 + Math.random() * 0.7,
+        });
+      }
+    }
+
+    function moveDiscs(speedMult) {
+      discs.forEach(disc => {
+        disc.p = (disc.p + 0.0003 * speedMult) % 1;
+        tweenDisc(disc);
+        const p = disc.sx * disc.sy;
+        let a = 1;
+        if      (p < 0.01) a = Math.pow(Math.min(p / 0.01, 1), 3);
+        else if (p > 0.2)  a = 1 - Math.min((p - 0.2) / 0.8, 1);
+        disc.a = a;
+      });
+    }
+
+    function moveDots(speedMult) {
+      dots_arr.forEach(dot => {
+        const v = tweenVal(0, 0.001, 1 - dot.d.sx * dot.d.sy, 'inExpo');
+        dot.p = (dot.p + v * speedMult) % 1;
+      });
+    }
+
+    function drawDiscs(alpha) {
+      ctx.lineWidth = 0.6;
+      discs.forEach(disc => {
+        const p = disc.sx * disc.sy;
+        ctx.beginPath();
+        ctx.globalAlpha = disc.a * alpha;
+        ctx.strokeStyle = p > 0.05 ? 'rgba(180,180,180,0.14)' : 'rgba(180,180,180,0.06)';
+        ctx.ellipse(disc.x, disc.y + disc.h, disc.w, disc.h, 0, 0, Math.PI * 2);
+        ctx.stroke();
+        ctx.closePath();
+      });
+      ctx.globalAlpha = 1;
+    }
+
+    function drawDots(alpha) {
+      dots_arr.forEach(dot => {
+        const { d, p, c, o } = dot;
+        const _p = d.sx * d.sy;
+        const newA = Math.PI * 2 * p;
+        const x = d.x + Math.cos(newA) * d.w;
+        const y = d.y + Math.sin(newA) * d.h;
+        ctx.globalAlpha = d.a * o * alpha;
+        ctx.fillStyle = c;
+        ctx.beginPath();
+        ctx.arc(x, y + d.h, 1 + _p * 0.5, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.closePath();
+      });
+      ctx.globalAlpha = 1;
+    }
+
+    function getSing() { return { x: W * 0.5, y: H * 0.78 }; }
+
+    function getBeamTargets() {
+      const { x: sx, y: sy } = getSing();
+      const reach = Math.min(W, H) * 0.55;
+      return [
+        { x: sx - reach * 0.9,  y: sy - reach * 0.65 },
+        { x: sx - reach * 0.3,  y: sy - reach * 1.0  },
+        { x: sx + reach * 0.3,  y: sy - reach * 1.0  },
+        { x: sx + reach * 0.9,  y: sy - reach * 0.65 },
+        { x: sx,                y: sy - reach * 0.8  },
+      ];
+    }
+
+    function drawPhase2(p2) {
+      const { x: sx, y: sy } = getSing();
+      const targets = getBeamTargets();
+
+      if (time >= nextPulseAt) {
+        pulses.push({ born: time, maxR: Math.max(W, H) * 0.9 });
+        nextPulseAt = time + 1.4;
+      }
+
+      pulses = pulses.filter(pu => (time - pu.born) < 2.5);
+      pulses.forEach(pu => {
+        const age = (time - pu.born) / 2.5;
+        const r   = age * pu.maxR;
+        ctx.beginPath();
+        ctx.arc(sx, sy, r, 0, Math.PI * 2);
+        ctx.strokeStyle = '#c8ff00';
+        ctx.lineWidth = 1.2;
+        ctx.globalAlpha = (1 - age) * p2 * 0.35;
+        ctx.stroke();
+        ctx.globalAlpha = 1;
+      });
+
+      targets.forEach((tgt, i) => {
+        const dx = tgt.x - sx, dy = tgt.y - sy;
+
+        ctx.beginPath();
+        ctx.moveTo(sx, sy);
+        ctx.lineTo(tgt.x, tgt.y);
+        ctx.strokeStyle = '#c8ff00';
+        ctx.lineWidth = 0.8;
+        ctx.globalAlpha = p2 * 0.12;
+        ctx.stroke();
+
+        for (let j = 0; j < 3; j++) {
+          const t = ((time * 0.35 + j * 0.33 + i * 0.07) % 1);
+          const eT = easeInOutCubic(t);
+          ctx.beginPath();
+          ctx.arc(sx + dx*eT, sy + dy*eT, 1.8, 0, Math.PI*2);
+          ctx.fillStyle = '#c8ff00';
+          ctx.globalAlpha = Math.sin(t * Math.PI) * p2 * 0.9;
+          ctx.fill();
+        }
+
+        const rt = ((time * 0.25 + i * 0.2 + 0.5) % 1);
+        const rT = 1 - easeInOutCubic(rt);
+        ctx.beginPath();
+        ctx.arc(sx + dx*rT, sy + dy*rT, 2.5, 0, Math.PI*2);
+        ctx.fillStyle = '#ffffff';
+        ctx.globalAlpha = Math.sin(rt * Math.PI) * p2 * 0.7;
+        ctx.fill();
+
+        const flashPhase = Math.sin(time * 1.8 + i * 1.3);
+        const flashA = Math.pow(Math.max(0, flashPhase), 6) * p2;
+        if (flashA > 0.05) {
+          const grd = ctx.createRadialGradient(tgt.x, tgt.y, 0, tgt.x, tgt.y, 20);
+          grd.addColorStop(0, `rgba(200,255,0,${flashA * 0.9})`);
+          grd.addColorStop(1, 'rgba(0,0,0,0)');
+          ctx.beginPath();
+          ctx.arc(tgt.x, tgt.y, 20, 0, Math.PI*2);
+          ctx.fillStyle = grd;
+          ctx.globalAlpha = 1;
+          ctx.fill();
+        }
+
+        ctx.globalAlpha = 1;
+      });
+
+      const cpA = (Math.sin(time * 2.2) * 0.4 + 0.6) * p2;
+      const cGrd = ctx.createRadialGradient(sx, sy, 0, sx, sy, 80);
+      cGrd.addColorStop(0, `rgba(200,255,0,${cpA * 0.55})`);
+      cGrd.addColorStop(0.5, `rgba(200,255,0,${cpA * 0.15})`);
+      cGrd.addColorStop(1, 'rgba(0,0,0,0)');
+      ctx.beginPath();
+      ctx.arc(sx, sy, 80, 0, Math.PI * 2);
+      ctx.fillStyle = cGrd;
+      ctx.globalAlpha = 1;
+      ctx.fill();
+    }
+
+    function drawPhase3(p3) {
+      const { x: sx, y: sy } = getSing();
+      const maxR = Math.sqrt(W*W + H*H) * 1.05;
+      const r = easeInCubic(p3) * maxR;
+
+      if (p3 < 0.92) {
+        const ringGrd = ctx.createRadialGradient(sx, sy, r * 0.9, sx, sy, r * 1.18);
+        ringGrd.addColorStop(0, 'rgba(0,0,0,0)');
+        ringGrd.addColorStop(0.45, `rgba(200,255,0,${0.55 * Math.sin(p3 * Math.PI)})`);
+        ringGrd.addColorStop(1, 'rgba(0,0,0,0)');
+        ctx.beginPath();
+        ctx.arc(sx, sy, r * 1.18, 0, Math.PI * 2);
+        ctx.fillStyle = ringGrd;
+        ctx.globalAlpha = 1;
+        ctx.fill();
+      }
+
+      ctx.beginPath();
+      ctx.arc(sx, sy, r, 0, Math.PI * 2);
+      ctx.fillStyle = '#000';
+      ctx.globalAlpha = 1;
+      ctx.fill();
+
+      if (p3 > 0.88) {
+        ctx.fillStyle = '#000';
+        ctx.globalAlpha = Math.min(1, (p3 - 0.88) / 0.12);
+        ctx.fillRect(0, 0, W, H);
+      }
+      ctx.globalAlpha = 1;
+    }
+
+    function frame() {
+      requestAnimationFrame(frame);
+      time += 0.016;
+
+      const prog = bhProgress;
+      const absP = Math.max(0, Math.min(1, (prog - 0.02) / 0.33));
+      const p2   = Math.max(0, Math.min(1, (prog - 0.28) / 0.15));
+      const p3   = Math.max(0, Math.min(1, (prog - 0.55) / 0.45));
+
+      const baseMult = (window.__bhSpeedMult || 1);
+      const discSpeed = baseMult * (1 + absP * 28);
+
+      ctx.save();
+      ctx.scale(dpi, dpi);
+      ctx.clearRect(0, 0, W, H);
+      ctx.fillStyle = '#000';
+      ctx.fillRect(0, 0, W, H);
+
+      const discAlpha = Math.max(0, (1 - absP * 0.75) * (1 - p2 * 0.9));
+
+      moveDiscs(discSpeed);
+      moveDots(discSpeed);
+
+      if (discAlpha > 0.01) {
+        drawDiscs(discAlpha);
+        drawDots(discAlpha);
+      }
+
+      if (absP > 0.05 && absP < 0.95 && discAlpha > 0.01) {
+        const flashA = Math.sin(absP * Math.PI) * 0.45;
+        const { x: sx, y: sy } = getSing();
+        const sGrd = ctx.createRadialGradient(sx, sy, 0, sx, sy, Math.min(W, H)*0.4);
+        sGrd.addColorStop(0, `rgba(200,255,0,${flashA * 0.6})`);
+        sGrd.addColorStop(1, 'rgba(0,0,0,0)');
+        ctx.beginPath();
+        ctx.arc(sx, sy, Math.min(W,H)*0.4, 0, Math.PI*2);
+        ctx.fillStyle = sGrd;
+        ctx.globalAlpha = 1;
+        ctx.fill();
+      }
+
+      if (p2 > 0.01) drawPhase2(p2 * (1 - p3));
+      if (p3 > 0)    drawPhase3(p3);
+
+      ctx.restore();
+    }
+
+    const scrollWrapper = document.querySelector('.services-scroll');
+    const track   = document.querySelector('.services-track');
+    const dotEls  = document.querySelectorAll('.srv-dot');
+
+    function onScroll() {
+      if (!scrollWrapper) return;
+      const rect  = scrollWrapper.getBoundingClientRect();
+      const total = scrollWrapper.offsetHeight - window.innerHeight;
+      const p = Math.max(0, Math.min(1, -rect.top / total));
+      let tx;
+      if (p < 0.18)       tx = 0;
+      else if (p < 0.30)  tx = ((p - 0.18) / 0.12) * 100;
+      else if (p < 0.57)  tx = 100;
+      else if (p < 0.69)  tx = 100 + ((p - 0.57) / 0.12) * 100;
+      else                tx = 200;
+      bhProgress = tx / 200;
+      if (track) track.style.transform = `translateX(${-tx}vw)`;
+      const panel = tx < 50 ? 0 : tx < 150 ? 1 : 2;
+      dotEls.forEach((d, i) => d.classList.toggle('active', i === panel));
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    resize();
+    frame();
+    onScroll();
+
+    new ResizeObserver(() => { resize(); }).observe(canvas.parentElement);
+  })();
+  </script>
+
+  <!-- SCROLL ANIMATIONS -->
+  <script>
+  (function() {
+    const els = document.querySelectorAll('.fade-up');
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          obs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    els.forEach(el => obs.observe(el));
+  })();
+  </script>
+
+</body>
+</html>

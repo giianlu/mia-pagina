@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chi sono — Gianluca Centraco</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #06060c;
+      --bg2: #0a0a14;
+      --accent: #c8ff00;
+      --accent-dim: rgba(200,255,0,0.25);
+      --white: oklch(0.97 0.005 240);
+      --muted: oklch(0.58 0.01 240);
+      --border: oklch(0.20 0.01 240);
+      --font-display: 'Syne', sans-serif;
+      --font-body: 'Space Grotesk', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--white);
+      font-family: var(--font-body);
+      font-weight: 400;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 22px 48px;
+      background: linear-gradient(to bottom, var(--bg) 40%, transparent);
+    }
+
+    .nav-logo {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--white);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+
+    .nav-link {
+      font-family: var(--font-body);
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-link:hover, .nav-link.active { color: var(--white); }
+
+    .nav-cta {
+      font-family: var(--font-body);
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #c8ff00;
+      text-decoration: none;
+      border: 1px solid rgba(200,255,0,0.4);
+      padding: 9px 22px;
+      border-radius: 2px;
+      transition: background 0.2s;
+    }
+    .nav-cta:hover { background: rgba(200,255,0,0.08); }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      padding: 120px 80px 80px;
+      position: relative;
+      overflow: hidden;
+      gap: 60px;
+    }
+
+    #constellation-canvas {
+      position: absolute;
+      inset: 0;
+      width: 100%; height: 100%;
+      z-index: 0;
+    }
+
+    .hero-text {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-eyebrow {
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #c8ff00;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .hero-eyebrow::before {
+      content: '';
+      display: block;
+      width: 28px; height: 1px;
+      background: #c8ff00;
+    }
+
+    .hero-name {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: clamp(3rem, 6vw, 5.5rem);
+      letter-spacing: -0.03em;
+      line-height: 1.0;
+      margin-bottom: 24px;
+    }
+
+    .hero-tagline {
+      font-size: 1.1rem;
+      font-weight: 300;
+      color: var(--muted);
+      line-height: 1.7;
+      max-width: 440px;
+      margin-bottom: 40px;
+    }
+
+    .hero-stat-row {
+      display: flex;
+      gap: 36px;
+      flex-wrap: wrap;
+    }
+
+    .hero-stat {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .hero-stat-n {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 1.8rem;
+      color: #c8ff00;
+      line-height: 1;
+    }
+    .hero-stat-l {
+      font-size: 0.75rem;
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      text-transform: uppercase;
+    }
+
+    /* Face constellation canvas side */
+    .hero-face {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #face-canvas {
+      width: 100%;
+      max-width: 520px;
+      aspect-ratio: 1;
+      display: block;
+    }
+
+    /* ── SECTIONS ── */
+    .section {
+      padding: 100px 80px;
+      border-top: 1px solid var(--border);
+    }
+
+    .section-label {
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #c8ff00;
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: clamp(2rem, 4vw, 3rem);
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      margin-bottom: 60px;
+    }
+
+    /* ── TIMELINE ── */
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      max-width: 900px;
+    }
+
+    .tl-item {
+      display: grid;
+      grid-template-columns: 180px 1px 1fr;
+      gap: 0 40px;
+      padding-bottom: 60px;
+      position: relative;
+    }
+    .tl-item:last-child { padding-bottom: 0; }
+
+    .tl-date {
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      text-transform: uppercase;
+      padding-top: 4px;
+      text-align: right;
+    }
+
+    .tl-line {
+      background: var(--border);
+      position: relative;
+    }
+    .tl-line::before {
+      content: '';
+      position: absolute;
+      top: 6px; left: 50%;
+      transform: translateX(-50%);
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: #c8ff00;
+      box-shadow: 0 0 12px rgba(200,255,0,0.5);
+    }
+
+    .tl-content { padding-top: 0; }
+
+    .tl-role {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.15rem;
+      margin-bottom: 4px;
+    }
+
+    .tl-company {
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      color: #c8ff00;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .tl-desc {
+      font-size: 0.92rem;
+      line-height: 1.75;
+      color: var(--muted);
+      max-width: 520px;
+    }
+
+    /* ── BIO ── */
+    .bio-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+
+    .bio-lead {
+      font-family: var(--font-display);
+      font-size: clamp(1.4rem, 2.5vw, 2rem);
+      font-weight: 600;
+      line-height: 1.4;
+      letter-spacing: -0.01em;
+    }
+    .bio-lead em { font-style: normal; color: #c8ff00; }
+
+    .bio-body p {
+      font-size: 1rem;
+      line-height: 1.85;
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+    .bio-body p:last-child { margin-bottom: 0; }
+    .bio-body strong { color: var(--white); font-weight: 500; }
+
+    /* ── SKILLS ── */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+    }
+
+    .skill-item {
+      background: var(--bg);
+      padding: 36px 32px;
+      transition: background 0.2s;
+    }
+    .skill-item:hover { background: var(--bg2); }
+
+    .skill-icon {
+      width: 32px; height: 32px;
+      margin-bottom: 16px;
+      color: #c8ff00;
+    }
+
+    .skill-name {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 1rem;
+      margin-bottom: 8px;
+    }
+
+    .skill-desc {
+      font-size: 0.85rem;
+      line-height: 1.6;
+      color: var(--muted);
+    }
+
+    /* ── CTA ── */
+    .cta-strip {
+      padding: 100px 80px;
+      text-align: center;
+      border-top: 1px solid var(--border);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-strip::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 60% at 50% 50%, rgba(200,255,0,0.04) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .cta-strip h2 {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      letter-spacing: -0.03em;
+      margin-bottom: 20px;
+    }
+
+    .cta-strip p {
+      font-size: 1rem;
+      color: var(--muted);
+      margin-bottom: 40px;
+      line-height: 1.7;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #c8ff00;
+      color: #000;
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 0.88rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding: 16px 34px;
+      border-radius: 2px;
+      text-decoration: none;
+      transition: opacity 0.2s, transform 0.2s;
+    }
+    .btn-primary:hover { opacity: 0.85; transform: translateY(-1px); }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 40px 80px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    footer p { font-size: 0.8rem; color: var(--muted); margin-top: 6px; }
+
+    .footer-links {
+      display: flex;
+      gap: 28px;
+    }
+    .footer-links a {
+      font-size: 0.82rem;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: #c8ff00; }
+
+    /* ── FADE IN ── */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.75s ease, transform 0.75s ease;
+    }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 960px) {
+      nav { padding: 18px 24px; }
+      .hero { grid-template-columns: 1fr; padding: 110px 28px 60px; gap: 40px; }
+      .hero-face { max-width: 340px; margin: 0 auto; }
+      #face-canvas { max-width: 100%; }
+      .section { padding: 70px 28px; }
+      .bio-grid { grid-template-columns: 1fr; gap: 36px; }
+      .skills-grid { grid-template-columns: 1fr 1fr; }
+      .tl-item { grid-template-columns: 110px 1px 1fr; gap: 0 24px; }
+      .cta-strip { padding: 80px 28px; }
+      footer { padding: 36px 28px; }
+    }
+    @media (max-width: 540px) {
+      .hero-name { font-size: 2.4rem; }
+      .skills-grid { grid-template-columns: 1fr; }
+      .tl-item { grid-template-columns: 80px 1px 1fr; gap: 0 16px; }
+      .hero-stat-row { gap: 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a class="nav-logo" href="index.html">Gianluca Centraco</a>
+    <div class="nav-links">
+      <a href="chi-sono.html" class="nav-link active">Chi sono</a>
+      <a href="https://calendly.com/consulenza-gianlucacentra/30min" target="_blank" rel="noopener" class="nav-cta">Call gratuita →</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <canvas id="constellation-canvas"></canvas>
+
+    <div class="hero-text">
+      <div class="hero-eyebrow">Growth Consultant</div>
+      <h1 class="hero-name" style="font-size:70px;">Chi sono?</h1>
+      <p class="hero-tagline">
+        Da performance marketer a ricercatore. Da Arduino alla consulenza. Costruisco la crescita sui dati, non sulle intuizioni.
+      </p>
+      <div class="hero-stat-row">
+        <div class="hero-stat">
+          <span class="hero-stat-n">4</span>
+          <span class="hero-stat-l">anni in Arduino</span>
+        </div>
+        <div class="hero-stat">
+          <span class="hero-stat-n">PhD</span>
+          <span class="hero-stat-l">Business & Management</span>
+        </div>
+        <div class="hero-stat">
+          <span class="hero-stat-n">∞</span>
+          <span class="hero-stat-l">dati analizzati</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-face">
+      <canvas id="face-canvas" width="520" height="520"></canvas>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="section fade-up">
+    <div class="section-label">Competenze</div>
+    <h2 class="section-title">Cosa so fare.</h2>
+
+    <div class="skills-grid">
+      <div class="skill-item">
+        <svg class="skill-icon" viewBox="0 0 32 32" fill="none">
+          <circle cx="16" cy="16" r="3" fill="currentColor"/>
+          <circle cx="16" cy="16" r="10" stroke="currentColor" stroke-width="1" stroke-dasharray="3 3"/>
+          <circle cx="16" cy="16" r="15" stroke="currentColor" stroke-width="0.5" opacity="0.4"/>
+        </svg>
+        <div class="skill-name">Data Tracking</div>
+        <p class="skill-desc">GA4, GTM, e-commerce events, pixel management, data layer design. Costruisco sistemi di misurazione che servono, senza inutili complicazioni.</p>
+      </div>
+
+      <div class="skill-item">
+        <svg class="skill-icon" viewBox="0 0 32 32" fill="none">
+          <rect x="4" y="20" width="4" height="8" fill="currentColor" opacity="0.4"/>
+          <rect x="10" y="14" width="4" height="14" fill="currentColor" opacity="0.6"/>
+          <rect x="16" y="8" width="4" height="20" fill="currentColor" opacity="0.8"/>
+          <rect x="22" y="4" width="4" height="24" fill="currentColor"/>
+        </svg>
+        <div class="skill-name">Performance Marketing</div>
+        <p class="skill-desc">Meta Ads, Google Ads, campagne di acquisizione e retargeting. Specializzato in test rapidi di mercato per validare ipotesi a basso costo prima di scalare.</p>
+      </div>
+
+      <div class="skill-item">
+        <svg class="skill-icon" viewBox="0 0 32 32" fill="none">
+          <path d="M4 28 L12 18 L18 22 L28 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="28" cy="8" r="2" fill="currentColor"/>
+        </svg>
+        <div class="skill-name">Growth Strategy</div>
+        <p class="skill-desc">Traduco i dati raccolti nelle fasi precedenti in decisioni concrete di crescita e piani d'azione misurabili.</p>
+      </div>
+
+      <div class="skill-item">
+        <svg class="skill-icon" viewBox="0 0 32 32" fill="none">
+          <rect x="4" y="4" width="10" height="10" stroke="currentColor" stroke-width="1.2"/>
+          <rect x="18" y="4" width="10" height="10" stroke="currentColor" stroke-width="1.2"/>
+          <rect x="4" y="18" width="10" height="10" stroke="currentColor" stroke-width="1.2"/>
+          <rect x="18" y="18" width="10" height="10" stroke="currentColor" stroke-width="1.2"/>
+        </svg>
+        <div class="skill-name">A/B Testing &amp; CRO</div>
+        <p class="skill-desc">Progettazione e analisi di esperimenti. Dal test delle landing page all'ottimizzazione del funnel, con approccio statistico e focus sui KPI che contano.</p>
+      </div>
+
+      <div class="skill-item">
+        <svg class="skill-icon" viewBox="0 0 32 32" fill="none">
+          <path d="M16 4 L28 10 L28 22 L16 28 L4 22 L4 10 Z" stroke="currentColor" stroke-width="1.2"/>
+          <path d="M16 4 L16 28 M4 10 L28 22 M28 10 L4 22" stroke="currentColor" stroke-width="0.5" opacity="0.4"/>
+        </svg>
+        <div class="skill-name">Product Management</div>
+        <p class="skill-desc">Esperienza diretta come Product Owner in contesto internazionale. Roadmap, backlog prioritization, collaborazione cross-funzionale e shipping orientato al risultato.</p>
+      </div>
+
+      <div class="skill-item">
+        <svg class="skill-icon" viewBox="0 0 32 32" fill="none">
+          <circle cx="8" cy="16" r="3" stroke="currentColor" stroke-width="1.2"/>
+          <circle cx="24" cy="8" r="3" stroke="currentColor" stroke-width="1.2"/>
+          <circle cx="24" cy="24" r="3" stroke="currentColor" stroke-width="1.2"/>
+          <line x1="11" y1="14.5" x2="21" y2="9.5" stroke="currentColor" stroke-width="0.8"/>
+          <line x1="11" y1="17.5" x2="21" y2="22.5" stroke="currentColor" stroke-width="0.8"/>
+        </svg>
+        <div class="skill-name">Analytics &amp; BI</div>
+        <p class="skill-desc">Trasformo raw data in dashboard che guidano decisioni.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BIO -->
+  <section class="section fade-up">
+    <div class="section-label">La storia</div>
+    <h2 class="section-title">Un percorso<br/>non lineare.</h2>
+
+    <div class="bio-grid">
+      <div class="bio-lead">
+        Ho imparato che la crescita vera non si improvvisa. <em>TUTTO parte dal dato.</em> Da lì si misura, si testa, si corregge.
+      </div>
+      <div class="bio-body">
+        <p>
+          Ho trascorso quasi <strong>quattro anni in Arduino</strong>, il brand che ha democratizzato l'elettronica nel mondo, come Performance Marketing Manager e come Product Owner. Lì ho imparato cosa significa gestire budget pubblicitari su scala internazionale, ottimizzare funnel complessi e prendere decisioni di prodotto con impatto diretto sui ricavi.
+        </p>
+        <p>
+          Arduino non è un'azienda ordinaria: operare in un contesto globale, con un pubblico tecnico ed esigente, mi ha insegnato a costruire sistemi di tracking affidabili, a interpretare i dati senza illudermi, e a distinguere tra ciò che funziona davvero e ciò che sembra funzionare.
+        </p>
+        <p>
+          Ho lasciato quel ruolo per intraprendere un <strong>dottorato in Business & Management</strong>, con l'obiettivo di studiare tecnologie innovative applicate al marketing e di portare rigore metodologico al campo della crescita digitale, applicando strumenti di ricerca accademica a problemi concreti di business.
+        </p>
+        <p>
+          In parallelo ho avviato la mia attività di consulenza, lavorando con founder e team digitali per aiutarli a <strong>misurare ciò che conta, validare le idee prima di investire in scala, e scalare ciò che funziona</strong>.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIMELINE -->
+  <section class="section fade-up">
+    <div class="section-label">Percorso</div>
+    <h2 class="section-title">Timeline.</h2>
+
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-date">2024 — oggi</div>
+        <div class="tl-line"></div>
+        <div class="tl-content">
+          <div class="tl-role">Growth Consultant: Tracking, PPC &amp; Validation</div>
+          <div class="tl-company">Freelance</div>
+          <p class="tl-desc">Aiuto startup early-stage e business digitali a prendere decisioni di crescita più efficaci attraverso tracciamento, sperimentazione rapida e validazione del prodotto con test mirati e a basso budget.</p>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-date">2024 — oggi</div>
+        <div class="tl-line"></div>
+        <div class="tl-content">
+          <div class="tl-role">PhD Candidate — Business & Management</div>
+          <div class="tl-company">Università</div>
+          <p class="tl-desc">Ricerca (pubblicata su riviste internazionali) applicata all'intersezione tra growth strategy, behavioral data e tecnologie emergenti implementate nel digital marketing. L'obiettivo è portare rigore accademico alla pratica del growth management.</p>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-date">2020 — 2024</div>
+        <div class="tl-line"></div>
+        <div class="tl-content">
+          <div class="tl-role">Performance Marketing Manager & Product Owner</div>
+          <div class="tl-company">Arduino</div>
+          <p class="tl-desc">Quasi quattro anni in uno dei brand hardware più iconici al mondo. Ho gestito campagne paid a scala globale (Meta, Google, Reddit, X, etc.), costruito pipeline di analytics e guidato decisioni di prodotto basate sui dati per il segmento maker, education e cloud.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="cta-strip fade-up">
+    <h2>Parliamo del tuo<br/>progetto.</h2>
+    <p>20 minuti gratuiti. Nessun impegno.</p>
+    <a class="btn-primary" href="https://calendly.com/consulenza-gianlucacentra/30min" target="_blank" rel="noopener">
+      Prenota la call gratuita →
+    </a>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div>
+      <div class="nav-logo">Gianluca Centraco</div>
+      <p>Growth Consultant · Milano, Italia</p>
+    </div>
+    <div class="footer-links">
+      <a href="https://www.linkedin.com/in/gianluca-centraco/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="mailto:hello@gianluca.co">Email</a>
+      <a href="https://calendly.com/consulenza-gianlucacentra/30min" target="_blank" rel="noopener">Prenota una call</a>
+    </div>
+  </footer>
+
+  <!-- CONSTELLATION BACKGROUND -->
+  <script>
+  (function(){
+    const c = document.getElementById('constellation-canvas');
+    if (!c) return;
+    const ctx = c.getContext('2d');
+    let W, H, stars = [], conLines = [];
+    const STAR_N = 280;
+
+    function resize(){
+      W = c.width = c.offsetWidth;
+      H = c.height = c.offsetHeight;
+      stars = [];
+      for (let i = 0; i < STAR_N; i++) {
+        stars.push({
+          x: Math.random()*W,
+          y: Math.random()*H,
+          r: Math.random()*1.1+0.2,
+          a: Math.random()*0.45+0.05,
+          sp: Math.random()*0.6+0.2,
+          ph: Math.random()*Math.PI*2
+        });
+      }
+      // Connect nearby stars as constellation lines
+      conLines = [];
+      for (let i = 0; i < stars.length; i++) {
+        for (let j = i+1; j < stars.length; j++) {
+          const dx = stars[i].x-stars[j].x;
+          const dy = stars[i].y-stars[j].y;
+          const d = Math.sqrt(dx*dx+dy*dy);
+          if (d < 90 && Math.random() < 0.12) {
+            conLines.push([i,j]);
+          }
+        }
+      }
+    }
+
+    function tick(t){
+      requestAnimationFrame(tick);
+      ctx.clearRect(0,0,W,H);
+      conLines.forEach(([i,j])=>{
+        ctx.beginPath();
+        ctx.moveTo(stars[i].x, stars[i].y);
+        ctx.lineTo(stars[j].x, stars[j].y);
+        ctx.strokeStyle = 'rgba(200,255,0,0.04)';
+        ctx.lineWidth = 0.5;
+        ctx.stroke();
+      });
+      stars.forEach(s=>{
+        const a = s.a * (0.5 + 0.5*Math.sin(t*0.001*s.sp + s.ph));
+        ctx.beginPath();
+        ctx.arc(s.x, s.y, s.r, 0, Math.PI*2);
+        ctx.fillStyle = `rgba(210,215,220,${a})`;
+        ctx.fill();
+      });
+    }
+
+    resize();
+    requestAnimationFrame(tick);
+    new ResizeObserver(resize).observe(c.parentElement);
+  })();
+  </script>
+
+  <!-- FACE CONSTELLATION -->
+  <script>
+  (function(){
+    const canvas = document.getElementById('face-canvas');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    const S = 520; // canvas size
+    let time = 0;
+
+    // Key points of face (normalized 0-1, will be scaled to S×S)
+    // These form the outline + key features of a male face looking slightly left
+    const rawPts = {
+      // Face outline / jaw
+      jaw: [
+        [0.36, 0.22], // top-left temple
+        [0.30, 0.30], // left cheek high
+        [0.27, 0.42], // left cheek
+        [0.28, 0.58], // left jaw
+        [0.34, 0.70], // left chin-jaw
+        [0.42, 0.76], // left chin
+        [0.50, 0.78], // chin center
+        [0.58, 0.76], // right chin
+        [0.66, 0.70], // right chin-jaw
+        [0.72, 0.58], // right jaw
+        [0.73, 0.42], // right cheek
+        [0.70, 0.30], // right cheek high
+        [0.64, 0.22], // top-right temple
+      ],
+      // Forehead arc
+      forehead: [
+        [0.36, 0.22],
+        [0.40, 0.14],
+        [0.50, 0.10],
+        [0.60, 0.14],
+        [0.64, 0.22],
+      ],
+      // Left eye
+      leftEye: [
+        [0.37, 0.36], [0.41, 0.33], [0.45, 0.33], [0.48, 0.36],
+        [0.45, 0.39], [0.41, 0.39], [0.37, 0.36],
+      ],
+      // Right eye
+      rightEye: [
+        [0.52, 0.36], [0.56, 0.33], [0.60, 0.33], [0.63, 0.36],
+        [0.60, 0.39], [0.56, 0.39], [0.52, 0.36],
+      ],
+      // Nose
+      nose: [
+        [0.50, 0.42],
+        [0.47, 0.55],
+        [0.45, 0.57],
+        [0.50, 0.58],
+        [0.55, 0.57],
+        [0.53, 0.55],
+        [0.50, 0.42],
+      ],
+      // Mouth
+      mouth: [
+        [0.43, 0.64], [0.47, 0.62], [0.50, 0.63], [0.53, 0.62], [0.57, 0.64],
+        [0.54, 0.68], [0.50, 0.69], [0.46, 0.68], [0.43, 0.64],
+      ],
+      // Left eyebrow
+      lBrow: [[0.36, 0.30], [0.40, 0.28], [0.45, 0.27], [0.49, 0.29]],
+      // Right eyebrow
+      rBrow: [[0.51, 0.29], [0.55, 0.27], [0.60, 0.28], [0.64, 0.30]],
+      // Left ear hint
+      lEar: [[0.27, 0.42], [0.24, 0.46], [0.25, 0.52], [0.28, 0.55]],
+      // Right ear hint
+      rEar: [[0.73, 0.42], [0.76, 0.46], [0.75, 0.52], [0.72, 0.55]],
+    };
+
+    // Scale to canvas
+    const PAD = 40;
+    const RNG = S - PAD*2;
+    function sc(pt){ return [PAD + pt[0]*RNG, PAD + pt[1]*RNG]; }
+
+    // Collect all unique points for star nodes
+    const allPts = [];
+    const ptSet = new Set();
+    Object.values(rawPts).forEach(group => {
+      group.forEach(p => {
+        const key = p[0].toFixed(3)+','+p[1].toFixed(3);
+        if (!ptSet.has(key)) {
+          ptSet.add(key);
+          allPts.push({
+            raw: p,
+            twinkle: Math.random()*Math.PI*2,
+            tspeed: 0.4+Math.random()*1.2,
+            size: 1.5 + Math.random()*2,
+          });
+        }
+      });
+    });
+
+    // Add some scattered background stars
+    const bgStars = [];
+    for (let i=0; i<60; i++){
+      bgStars.push({
+        x: Math.random()*S, y: Math.random()*S,
+        r: Math.random()*0.7+0.2,
+        a: Math.random()*0.25+0.03,
+        ph: Math.random()*Math.PI*2,
+        sp: Math.random()*0.5+0.2,
+      });
+    }
+
+    function drawGroup(group, alpha){
+      if (group.length < 2) return;
+      ctx.beginPath();
+      const [x0,y0] = sc(group[0]);
+      ctx.moveTo(x0,y0);
+      for (let i=1; i<group.length; i++){
+        const [x,y] = sc(group[i]);
+        ctx.lineTo(x,y);
+      }
+      ctx.strokeStyle = `rgba(200,255,0,${0.28 * alpha})`;
+      ctx.lineWidth = 0.8;
+      ctx.stroke();
+    }
+
+    function frame(t){
+      requestAnimationFrame(frame);
+      time = t * 0.001;
+      ctx.clearRect(0,0,S,S);
+
+      // Background
+      ctx.fillStyle='#06060c';
+      ctx.fillRect(0,0,S,S);
+
+      // BG stars
+      bgStars.forEach(s=>{
+        const a = s.a * (0.5+0.5*Math.sin(time*s.sp+s.ph));
+        ctx.beginPath();
+        ctx.arc(s.x, s.y, s.r, 0, Math.PI*2);
+        ctx.fillStyle=`rgba(200,210,220,${a})`;
+        ctx.fill();
+      });
+
+      // Constellation lines — face features
+      Object.values(rawPts).forEach(grp => drawGroup(grp, 1));
+
+      // Star nodes
+      allPts.forEach(p => {
+        const [x,y] = sc(p.raw);
+        const pulse = 0.55 + 0.45*Math.sin(time*p.tspeed + p.twinkle);
+        const r = p.size * (0.8 + 0.2*pulse);
+        const a = 0.4 + 0.6*pulse;
+
+        // Outer glow
+        const grd = ctx.createRadialGradient(x,y,0,x,y,r*4);
+        grd.addColorStop(0, `rgba(200,255,0,${a*0.4})`);
+        grd.addColorStop(1, 'rgba(0,0,0,0)');
+        ctx.beginPath();
+        ctx.arc(x,y,r*4,0,Math.PI*2);
+        ctx.fillStyle=grd;
+        ctx.fill();
+
+        // Core star
+        ctx.beginPath();
+        ctx.arc(x,y,r,0,Math.PI*2);
+        ctx.fillStyle=`rgba(240,255,200,${a})`;
+        ctx.fill();
+      });
+
+      // Scanning line — slow horizontal sweep
+      const scanY = (S * ((time * 0.04) % 1));
+      const scanGrd = ctx.createLinearGradient(0, scanY-20, 0, scanY+20);
+      scanGrd.addColorStop(0, 'rgba(200,255,0,0)');
+      scanGrd.addColorStop(0.5, 'rgba(200,255,0,0.06)');
+      scanGrd.addColorStop(1, 'rgba(200,255,0,0)');
+      ctx.fillStyle=scanGrd;
+      ctx.fillRect(0, scanY-20, S, 40);
+    }
+
+    requestAnimationFrame(frame);
+  })();
+  </script>
+
+  <!-- SCROLL FADE -->
+  <script>
+  (function(){
+    const els = document.querySelectorAll('.fade-up');
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); }
+      });
+    }, { threshold: 0.1 });
+    els.forEach(el => obs.observe(el));
+  })();
+  </script>
+
+</body>
+</html>
