@@ -1,1 +1,6 @@
 .DS_Store
+
+# Evita commit accidentali di duplicati JPEG generati da Drive/Anteprima/sync.
+# Per committare un JPEG legittimo in assets/, usa `git add -f <file>`.
+assets/*.jpg
+assets/*.jpeg
