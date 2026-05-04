@@ -1,0 +1,29 @@
+{
+  "name": "Gianluca Centraco — Growth Consultant",
+  "short_name": "GC",
+  "description": "Growth Consultant a Torino specializzato in tracking, performance marketing e validazione di prodotti digitali.",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "lang": "it-IT",
+  "icons": [
+    {
+      "src": "/assets/favicons/favicon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/favicons/favicon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/favicons/favicon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
