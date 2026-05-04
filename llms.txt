@@ -1,0 +1,38 @@
+# Gianluca Centraco — Growth Consultant
+
+> Growth Consultant a Torino specializzato in tracking, performance marketing e validazione di prodotti digitali. PhD candidate in Business & Management, ex-Performance Marketing Manager e Product Owner in Arduino.
+
+Il sito è la presenza professionale di Gianluca Centraco, consulente freelance che aiuta founder e business digitali a misurare ciò che conta, validare idee a basso costo e scalare ciò che funziona. Approccio basato su rigore metodologico portato dalla ricerca accademica applicato a contesti business reali.
+
+## Pagine principali
+
+- [Home](https://gianlucacentra.com/): panoramica dei tre servizi principali — tracking & data, validazione tramite paid ads, growth scaling. Spiega il metodo in quattro fasi (diagnosi, tracking setup, test & validate, scale).
+- [Chi sono](https://gianlucacentra.com/chi-sono.html): biografia professionale, percorso da Performance Marketing Manager in Arduino al PhD, competenze tecniche (GA4, GTM, Meta Ads, Google Ads, A/B testing, product management), timeline di carriera 2020-oggi.
+- [Portfolio](https://gianlucacentra.com/portfolio.html): casi studio e progetti per area (tracking, paid ads, validazione), incluso il lavoro in Arduino.
+
+## Identità professionale
+
+- **Ruolo attuale**: Growth Consultant freelance + PhD Candidate in Business & Management presso Università degli Studi di Torino
+- **Esperienza precedente**: Performance Marketing Manager & Product Owner in Arduino (2020-2024)
+- **Aree di expertise**: Performance Marketing, Growth Strategy, Data Tracking, Google Analytics 4, Google Tag Manager, Meta Ads, Google Ads, A/B Testing, Conversion Rate Optimization, Product Management, Behavioral Data Analysis
+- **Location**: Torino, Italia
+
+## Pubblicazioni accademiche
+
+- **Centraco, G., & Santoro, G. (2025)**. "The adoption of non-fungible tokens (NFTs) in brand-customer interactions: engagement tool or hype?" *International Marketing Review*, 42(4), 767-787. Emerald Publishing. DOI: [10.1108/IMR-10-2024-0437](https://doi.org/10.1108/IMR-10-2024-0437)
+  - Studio multi-caso su come i brand integrano NFT nelle strategie marketing e sull'effetto delle collezioni NFT brandizzate sull'engagement clienti, con netnografia di canali Discord.
+  - Keywords: NFT, customer engagement, brand-customer relationship, blockchain marketing, Web3.
+
+Ulteriori pubblicazioni in corso di revisione o pubblicazione.
+
+## Profili pubblici
+
+- [LinkedIn](https://www.linkedin.com/in/gianluca-centraco/): profilo professionale principale
+- [Google Scholar](https://scholar.google.com/citations?user=idLfVH8AAAAJ): profilo accademico, lista pubblicazioni aggiornata
+- [ORCID](https://orcid.org/0009-0004-9672-4536): identificatore accademico standard
+- [GitHub](https://github.com/giianlu): codice e progetti tecnici
+
+## Contatti
+
+- **Email**: consulenza@gianlucacentra.com
+- **Call gratuita**: [Calendly](https://calendly.com/consulenza-gianlucacentra/30min) — 20 minuti, nessun impegno
