@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Chi sono — Gianluca Centraco</title>
   <meta name="description" content="Da Performance Marketing Manager in Arduino a PhD in Business & Management. Costruisco la crescita sui dati, non sulle intuizioni.">
   <meta name="author" content="Gianluca Centraco">
-  <meta name="keywords" content="growth consultant, performance marketing, arduino, PhD business management, tracking, paid ads, Torino">
+  <meta name="keywords" content="growth consultant, performance marketing, arduino, PhD business management, tracking, paid ads, automazione, Torino">
   <link rel="canonical" href="https://gianlucacentra.com/chi-sono.html">
   <meta name="language" content="Italian">
   <meta name="geo.region" content="IT-TO">
@@ -39,7 +39,7 @@
     "givenName": "Gianluca",
     "familyName": "Centraco",
     "jobTitle": "Growth Consultant",
-    "description": "Growth Consultant specializzato in tracking, performance marketing e validazione di prodotti digitali. PhD candidate in Business & Management con focus su tecnologie emergenti applicate al digital marketing.",
+    "description": "Growth Consultant e Fractional CMO specializzato in tracking, performance marketing, validazione di prodotti digitali e automazione. PhD candidate in Business & Management con focus su tecnologie emergenti applicate al digital marketing.",
     "url": "https://gianlucacentra.com",
     "image": "https://gianlucacentra.com/assets/og-image.webp",
     "address": {
@@ -68,6 +68,7 @@
       "A/B Testing",
       "Conversion Rate Optimization",
       "Product Management",
+      "Marketing Automation",
       "Behavioral Data Analysis"
     ],
     "identifier": {
@@ -110,26 +111,54 @@
   <link rel="icon" type="image/png" sizes="512x512" href="assets/favicons/favicon-512.png">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="icon" type="image/svg+xml" href="assets/favicons/favicon-1.svg">
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="preload" href="fonts/syne-800.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/space-grotesk-300.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/space-grotesk-400.woff2" as="font" type="font/woff2" crossorigin>
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    /* ── Webfonts (self-hosted) ── */
+    @font-face { font-family: 'Syne'; font-style: normal; font-weight: 400; font-display: swap; src: url('fonts/syne-400.woff2') format('woff2'); }
+    @font-face { font-family: 'Syne'; font-style: normal; font-weight: 500; font-display: swap; src: url('fonts/syne-500.woff2') format('woff2'); }
+    @font-face { font-family: 'Syne'; font-style: normal; font-weight: 600; font-display: swap; src: url('fonts/syne-600.woff2') format('woff2'); }
+    @font-face { font-family: 'Syne'; font-style: normal; font-weight: 700; font-display: swap; src: url('fonts/syne-700.woff2') format('woff2'); }
+    @font-face { font-family: 'Syne'; font-style: normal; font-weight: 800; font-display: swap; src: url('fonts/syne-800.woff2') format('woff2'); }
+    @font-face { font-family: 'Space Grotesk'; font-style: normal; font-weight: 300; font-display: swap; src: url('fonts/space-grotesk-300.woff2') format('woff2'); }
+    @font-face { font-family: 'Space Grotesk'; font-style: normal; font-weight: 400; font-display: swap; src: url('fonts/space-grotesk-400.woff2') format('woff2'); }
+    @font-face { font-family: 'Space Grotesk'; font-style: normal; font-weight: 500; font-display: swap; src: url('fonts/space-grotesk-500.woff2') format('woff2'); }
+    @font-face { font-family: 'Space Grotesk'; font-style: normal; font-weight: 600; font-display: swap; src: url('fonts/space-grotesk-600.woff2') format('woff2'); }
+    @font-face { font-family: 'Space Grotesk'; font-style: normal; font-weight: 700; font-display: swap; src: url('fonts/space-grotesk-700.woff2') format('woff2'); }
+    @font-face { font-family: 'DM Mono'; font-style: normal; font-weight: 300; font-display: swap; src: url('fonts/dm-mono-300.woff2') format('woff2'); }
+    @font-face { font-family: 'DM Mono'; font-style: normal; font-weight: 400; font-display: swap; src: url('fonts/dm-mono-400.woff2') format('woff2'); }
+    @font-face { font-family: 'DM Mono'; font-style: normal; font-weight: 500; font-display: swap; src: url('fonts/dm-mono-500.woff2') format('woff2'); }
 
+    /* ── Design tokens (subpage: blue-cast near-black) ── */
     :root {
       --bg: #06060c;
       --bg2: #0a0a14;
       --accent: #c8ff00;
-      --accent-dim: rgba(200,255,0,0.25);
       --white: oklch(0.97 0.005 240);
-      --muted: oklch(0.58 0.01 240);
-      --border: oklch(0.20 0.01 240);
+      --muted: oklch(0.60 0.01 240);
+      --border: oklch(0.22 0.01 240);
+      --accent-dim: rgba(200, 255, 0, 0.45);
+      --accent-glow: rgba(200, 255, 0, 0.14);
+      --accent-border: rgba(200, 255, 0, 0.3);
+      --accent-tint-8: rgba(200, 255, 0, 0.08);
+      --accent-tint-5: rgba(200, 255, 0, 0.05);
       --font-display: 'Syne', sans-serif;
       --font-body: 'Space Grotesk', sans-serif;
+      --font-mono: 'DM Mono', monospace;
+      --text-section: clamp(2rem, 4vw, 3.2rem);
+      --text-cta: clamp(2rem, 5vw, 3.5rem);
+      --text-lead-display: clamp(1.4rem, 2.5vw, 2rem);
+      --glow-dot: 0 0 12px rgba(200, 255, 0, 0.5);
+      --glow-radial: radial-gradient(ellipse 60% 60% at 50% 50%, rgba(200, 255, 0, 0.04) 0%, transparent 70%);
+      --fade-nav: linear-gradient(to bottom, var(--bg) 40%, transparent);
+      --dur-fast: 0.2s;
+      --dur-reveal: 0.75s;
     }
 
+    /* ── Base ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
-
     body {
       background: var(--bg);
       color: var(--white);
@@ -138,745 +167,359 @@
       overflow-x: hidden;
       -webkit-font-smoothing: antialiased;
     }
+    a { color: var(--muted); }
+    a:hover { color: var(--accent); }
 
-    /* ── NAV ── */
-    nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 22px 48px;
-      background: linear-gradient(to bottom, var(--bg) 40%, transparent);
-    }
-
-    .nav-logo {
-      font-family: var(--font-display);
-      font-weight: 700;
-      font-size: 1rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--white);
-      text-decoration: none;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 32px;
-    }
-
-    .nav-link {
-      font-family: var(--font-body);
-      font-size: 0.82rem;
-      font-weight: 500;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: var(--muted);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-    .nav-link:hover, .nav-link.active { color: var(--white); }
-
-    .nav-cta {
-      font-family: var(--font-body);
-      font-size: 0.82rem;
-      font-weight: 500;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: #c8ff00;
-      text-decoration: none;
-      border: 1px solid rgba(200,255,0,0.4);
-      padding: 9px 22px;
-      border-radius: 2px;
-      transition: background 0.2s;
-    }
-    .nav-cta:hover { background: rgba(200,255,0,0.08); }
-
-    /* ── HERO ── */
-    .hero {
-      min-height: 100vh;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      align-items: center;
-      padding: 120px 80px 80px;
-      position: relative;
-      overflow: hidden;
-      gap: 60px;
-    }
-
-    #constellation-canvas {
-      position: absolute;
-      inset: 0;
-      width: 100%; height: 100%;
-      z-index: 0;
-    }
-
-    .hero-text {
-      position: relative;
-      z-index: 2;
-    }
-
-    .hero-eyebrow {
-      font-size: 0.72rem;
-      font-weight: 500;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: #c8ff00;
-      margin-bottom: 20px;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-    .hero-eyebrow::before {
-      content: '';
-      display: block;
-      width: 28px; height: 1px;
-      background: #c8ff00;
-    }
-
-    .hero-name {
-      font-family: var(--font-display);
-      font-weight: 800;
-      font-size: clamp(3rem, 6vw, 5.5rem);
-      letter-spacing: -0.03em;
-      line-height: 1.0;
-      margin-bottom: 24px;
-    }
-
-    .hero-tagline {
-      font-size: 1.1rem;
-      font-weight: 300;
-      color: var(--muted);
-      line-height: 1.7;
-      max-width: 440px;
-      margin-bottom: 40px;
-    }
-
-    .hero-stat-row {
-      display: flex;
-      gap: 36px;
-      flex-wrap: wrap;
-    }
-
-    .hero-stat {
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-    }
-    .hero-stat-n {
-      font-family: var(--font-display);
-      font-weight: 800;
-      font-size: 1.8rem;
-      color: #c8ff00;
-      line-height: 1;
-    }
-    .hero-stat-l {
-      font-size: 0.75rem;
-      font-weight: 400;
-      letter-spacing: 0.08em;
-      color: var(--muted);
-      text-transform: uppercase;
-    }
-
-    /* Face constellation canvas side */
-    .hero-face {
-      position: relative;
-      z-index: 2;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    #face-canvas {
-      width: 100%;
-      max-width: 520px;
-      aspect-ratio: 1;
-      display: block;
-    }
-
-    /* ── SECTIONS ── */
-    .section {
-      padding: 100px 80px;
-      border-top: 1px solid var(--border);
-    }
-
-    .section-label {
-      font-size: 0.72rem;
-      font-weight: 500;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: #c8ff00;
-      margin-bottom: 12px;
-    }
-
-    .section-title {
-      font-family: var(--font-display);
-      font-weight: 800;
-      font-size: clamp(2rem, 4vw, 3rem);
-      letter-spacing: -0.02em;
-      line-height: 1.1;
-      margin-bottom: 60px;
-    }
-
-    /* ── TIMELINE ── */
-    .timeline {
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-      max-width: 900px;
-    }
-
-    .tl-item {
-      display: grid;
-      grid-template-columns: 180px 1px 1fr;
-      gap: 0 40px;
-      padding-bottom: 60px;
-      position: relative;
-    }
-    .tl-item:last-child { padding-bottom: 0; }
-
-    .tl-date {
-      font-size: 0.78rem;
-      font-weight: 500;
-      letter-spacing: 0.1em;
-      color: var(--muted);
-      text-transform: uppercase;
-      padding-top: 4px;
-      text-align: right;
-    }
-
-    .tl-line {
-      background: var(--border);
-      position: relative;
-    }
-    .tl-line::before {
-      content: '';
-      position: absolute;
-      top: 6px; left: 50%;
-      transform: translateX(-50%);
-      width: 8px; height: 8px;
-      border-radius: 50%;
-      background: #c8ff00;
-      box-shadow: 0 0 12px rgba(200,255,0,0.5);
-    }
-
-    .tl-content { padding-top: 0; }
-
-    .tl-role {
-      font-family: var(--font-display);
-      font-weight: 700;
-      font-size: 1.15rem;
-      margin-bottom: 4px;
-    }
-
-    .tl-company {
-      font-size: 0.82rem;
-      font-weight: 500;
-      letter-spacing: 0.06em;
-      color: #c8ff00;
-      text-transform: uppercase;
-      margin-bottom: 12px;
-    }
-
-    .tl-desc {
-      font-size: 0.92rem;
-      line-height: 1.75;
-      color: var(--muted);
-      max-width: 520px;
-    }
-
-    /* ── BIO ── */
-    .bio-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
-      align-items: start;
-    }
-
-    .bio-lead {
-      font-family: var(--font-display);
-      font-size: clamp(1.4rem, 2.5vw, 2rem);
-      font-weight: 600;
-      line-height: 1.4;
-      letter-spacing: -0.01em;
-    }
-    .bio-lead em { font-style: normal; color: #c8ff00; }
-
-    .bio-body p {
-      font-size: 1rem;
-      line-height: 1.85;
-      color: var(--muted);
-      margin-bottom: 20px;
-    }
-    .bio-body p:last-child { margin-bottom: 0; }
-    .bio-body strong { color: var(--white); font-weight: 500; }
-
-    /* ── SKILLS ── */
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1px;
-      background: var(--border);
-      border: 1px solid var(--border);
-    }
-
-    .skill-item {
-      background: var(--bg);
-      padding: 36px 32px;
-      transition: background 0.2s;
-    }
-    .skill-item:hover { background: var(--bg2); }
-
-    .skill-icon {
-      width: 32px; height: 32px;
-      margin-bottom: 16px;
-      color: #c8ff00;
-    }
-
-    .skill-name {
-      font-family: var(--font-display);
-      font-weight: 600;
-      font-size: 1rem;
-      margin-bottom: 8px;
-    }
-
-    .skill-desc {
-      font-size: 0.85rem;
-      line-height: 1.6;
-      color: var(--muted);
-    }
-
-    /* ── CTA ── */
-    .cta-strip {
-      padding: 100px 80px;
-      text-align: center;
-      border-top: 1px solid var(--border);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .cta-strip::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse 60% 60% at 50% 50%, rgba(200,255,0,0.04) 0%, transparent 70%);
-      pointer-events: none;
-    }
-
-    .cta-strip h2 {
-      font-family: var(--font-display);
-      font-weight: 800;
-      font-size: clamp(2rem, 5vw, 3.5rem);
-      letter-spacing: -0.03em;
-      margin-bottom: 20px;
-    }
-
-    .cta-strip p {
-      font-size: 1rem;
-      color: var(--muted);
-      margin-bottom: 40px;
-      line-height: 1.7;
-    }
-
-    .btn-primary {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: #c8ff00;
-      color: #000;
-      font-family: var(--font-body);
-      font-weight: 600;
-      font-size: 0.88rem;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      padding: 16px 34px;
-      border-radius: 2px;
-      text-decoration: none;
-      transition: opacity 0.2s, transform 0.2s;
-    }
-    .btn-primary:hover { opacity: 0.85; transform: translateY(-1px); }
-
-    /* ── FOOTER ── */
-    footer {
-      border-top: 1px solid var(--border);
-      padding: 40px 80px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 24px;
-      flex-wrap: wrap;
-    }
-
-    footer p { font-size: 0.8rem; color: var(--muted); margin-top: 6px; }
-
-    .footer-links {
-      display: flex;
-      gap: 28px;
-    }
-    .footer-links a {
-      font-size: 0.82rem;
-      color: var(--muted);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-    .footer-links a:hover { color: #c8ff00; }
-
-    /* ── FADE IN ── */
     .fade-up {
       opacity: 0;
       transform: translateY(28px);
-      transition: opacity 0.75s ease, transform 0.75s ease;
+      transition: opacity var(--dur-reveal) ease, transform var(--dur-reveal) ease;
     }
     .fade-up.visible { opacity: 1; transform: translateY(0); }
-
-    /* ── RESPONSIVE ── */
-    @media (max-width: 960px) {
-      nav { padding: 18px 24px; }
-      .hero { grid-template-columns: 1fr; padding: 110px 28px 60px; gap: 40px; }
-      .hero-face { max-width: 340px; margin: 0 auto; }
-      #face-canvas { max-width: 100%; }
-      .section { padding: 70px 28px; }
-      .bio-grid { grid-template-columns: 1fr; gap: 36px; }
-      .skills-grid { grid-template-columns: 1fr 1fr; }
-      .tl-item { grid-template-columns: 110px 1px 1fr; gap: 0 24px; }
-      .cta-strip { padding: 80px 28px; }
-      footer { padding: 36px 28px; }
+    @media (prefers-reduced-motion: reduce) {
+      .fade-up { opacity: 1; transform: none; transition: none; }
     }
-    @media (max-width: 540px) {
-      .hero-name { font-size: 2.4rem; }
-      .skills-grid { grid-template-columns: 1fr; }
-      .tl-item { grid-template-columns: 80px 1px 1fr; gap: 0 16px; }
-      .hero-stat-row { gap: 24px; }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.8); }
     }
 
-    /* ── HAMBURGER + MOBILE MENU ── */
-    .nav-toggle {
-      display: none;
-      background: transparent;
-      border: 0;
-      padding: 8px;
-      cursor: pointer;
-      width: 40px;
-      height: 40px;
-      flex-direction: column;
-      justify-content: center;
-      align-items: stretch;
-      gap: 6px;
+    /* ── Nav ── */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 22px 48px;
+      background: var(--fade-nav);
     }
-    .nav-toggle span {
-      display: block;
-      height: 2px;
-      width: 100%;
-      background: var(--white);
-      border-radius: 1px;
+    .nav-brand {
+      font-family: var(--font-display); font-weight: 700; font-size: 1rem;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--white); text-decoration: none; position: relative; z-index: 102; white-space: nowrap;
+    }
+    .nav-brand:hover { color: var(--white); }
+    .nav-links { display: flex; align-items: center; gap: 32px; }
+    .nav-link {
+      font-size: 0.82rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase;
+      color: var(--muted); text-decoration: none; white-space: nowrap; transition: color var(--dur-fast);
+    }
+    .nav-link:hover, .nav-link.active { color: var(--white); }
+    .nav-cta {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-weight: 600; font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--accent); text-decoration: none;
+      padding: 10px 22px; border: 1.5px solid var(--accent); border-radius: 3px;
+      transition: background var(--dur-fast), color var(--dur-fast);
+    }
+    .nav-cta:hover { background: var(--accent); color: #000; }
+    .nav-burger {
+      display: none; background: none; border: none; cursor: pointer;
+      padding: 10px 6px; flex-direction: column; gap: 5px; position: relative; z-index: 102;
+    }
+    .nav-burger span { width: 20px; height: 1.5px; background: var(--white); display: block; transition: transform 0.2s ease; }
+    .nav-burger.open span:first-child { transform: translateY(3.25px) rotate(45deg); }
+    .nav-burger.open span:last-child { transform: translateY(-3.25px) rotate(-45deg); }
+    .nav-sheet {
+      display: none; position: fixed; inset: 0;
+      background: rgba(10,10,20,0.85);
+      -webkit-backdrop-filter: blur(24px); backdrop-filter: blur(24px);
+      z-index: 101; flex-direction: column; justify-content: center; gap: 32px; padding: 0 32px;
+    }
+    .nav-sheet.open { display: flex; }
+    .nav-sheet a.sheet-link {
+      font-family: var(--font-display); font-weight: 700; font-size: 1.6rem;
+      letter-spacing: 0.04em; text-transform: uppercase; color: var(--white); text-decoration: none;
+    }
+    .nav-sheet a.sheet-link.active { color: var(--accent); }
+    .nav-sheet .nav-cta { align-self: flex-start; margin-top: 12px; }
+
+    /* ── Buttons / Eyebrow ── */
+    .btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-family: var(--font-body); font-weight: 600; font-size: 0.88rem; letter-spacing: 0.05em;
+      text-transform: uppercase; text-decoration: none; cursor: pointer;
+      background: var(--accent); color: #000;
+      padding: 16px 34px; border: none; border-radius: 2px;
+      transition: opacity var(--dur-fast), transform var(--dur-fast);
+    }
+    .btn:hover { opacity: 0.88; transform: translateY(-1px); color: #000; }
+    .eyebrow {
+      font-size: 0.72rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--accent); display: flex; align-items: center; gap: 12px;
+    }
+    .eyebrow .dash { display: block; width: 28px; height: 1px; background: var(--accent); flex-shrink: 0; }
+
+    /* ── Hero ── */
+    .hero {
+      min-height: 100vh; display: flex; flex-direction: column; justify-content: center;
+      padding: 120px 80px 80px; position: relative; overflow: hidden;
+    }
+    .starfield, .hero-orbits { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+    .starfield { z-index: 0; }
+    .hero-orbits { z-index: 1; }
+    .hero-content { position: relative; z-index: 2; max-width: 660px; }
+    .hero-content .eyebrow { margin-bottom: 20px; }
+    .hero-title {
+      font-family: var(--font-display); font-weight: 800; font-size: 70px;
+      letter-spacing: -0.03em; line-height: 1.0; margin-bottom: 24px; color: var(--white);
+    }
+    .hero-lead {
+      font-size: 1.1rem; font-weight: 300; color: var(--muted); line-height: 1.7;
+      max-width: 560px; margin-bottom: 40px;
+    }
+    .hero-stats { display: flex; gap: 36px; flex-wrap: wrap; }
+    .stat-sm { display: flex; flex-direction: column; gap: 4px; }
+    .stat-sm .value { font-family: var(--font-display); font-weight: 800; font-size: 1.8rem; color: var(--accent); line-height: 1; }
+    .stat-sm .label { font-size: 0.75rem; font-weight: 400; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); line-height: 1.4; }
+
+    /* ── Section header ── */
+    .section-header .eyebrow { margin-bottom: 14px; }
+    .section-header h2 {
+      font-family: var(--font-display); font-weight: 700; font-size: var(--text-section);
+      letter-spacing: -0.02em; line-height: 1.1; color: var(--white);
     }
 
-    .mobile-menu {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 60vh;
-      z-index: 200;
-      background: rgba(10, 10, 20, 0.85);
-      backdrop-filter: blur(24px);
-      -webkit-backdrop-filter: blur(24px);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-      transform: translateY(-100%);
-      opacity: 0;
-      visibility: hidden;
-      transition: transform 0.35s ease, opacity 0.35s ease, visibility 0.35s;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 80px 32px 40px;
+    /* ── Skills ── */
+    .skills { padding: 100px 80px; border-top: 1px solid var(--border); }
+    .skills .section-header { margin-bottom: 60px; }
+    .skill-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 1px; background: var(--border); border: 1px solid var(--border);
     }
-    .mobile-menu.open {
-      transform: translateY(0);
-      opacity: 1;
-      visibility: visible;
-    }
+    .skill-item { background: var(--bg); padding: 36px 32px; transition: background var(--dur-fast); }
+    .skill-item:hover { background: var(--bg2); }
+    .skill-item .icon { margin-bottom: 16px; color: var(--accent); }
+    .skill-item svg { display: block; flex-shrink: 0; }
+    .skill-name { font-family: var(--font-display); font-weight: 600; font-size: 1rem; color: var(--white); margin-bottom: 8px; }
+    .skill-item p { font-size: 0.85rem; line-height: 1.6; color: var(--muted); }
+    .skill-item.full { grid-column: 1 / -1; }
+    .skill-item.full p { max-width: 720px; }
 
-    .mobile-menu-overlay {
-      position: fixed;
-      top: 60vh;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      z-index: 199;
-      background: rgba(0, 0, 0, 0.5);
-      opacity: 0;
-      visibility: hidden;
-      transition: opacity 0.35s ease, visibility 0.35s;
-      cursor: pointer;
+    /* ── Bio ── */
+    .bio { padding: 100px 80px; border-top: 1px solid var(--border); }
+    .bio .section-header { margin-bottom: 60px; }
+    .bio-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+    .bio-statement {
+      font-family: var(--font-display); font-size: var(--text-lead-display); font-weight: 600;
+      line-height: 1.4; letter-spacing: -0.01em; color: var(--white);
     }
-    .mobile-menu-overlay.open {
-      opacity: 1;
-      visibility: visible;
-    }
+    .bio-statement em { font-style: normal; color: var(--accent); }
+    .bio-text p { font-size: 1rem; line-height: 1.85; color: var(--muted); margin-bottom: 20px; }
+    .bio-text p:last-child { margin-bottom: 0; }
+    .bio-text strong { color: var(--white); font-weight: 500; }
 
-    .mobile-menu-close {
-      position: absolute;
-      top: 16px;
-      right: 16px;
-      width: 44px;
-      height: 44px;
-      background: rgba(255, 255, 255, 0.06);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 50%;
-      cursor: pointer;
-      padding: 0;
-      transition: background 0.2s ease, border-color 0.2s ease;
+    /* ── Timeline ── */
+    .timeline { padding: 100px 80px; border-top: 1px solid var(--border); }
+    .timeline .section-header { margin-bottom: 60px; }
+    .timeline-list { max-width: 900px; }
+    .tl-item {
+      display: grid; grid-template-columns: 180px 1px 1fr; gap: 0 40px;
+      padding-bottom: 60px; position: relative;
     }
-    .mobile-menu-close:hover {
-      background: rgba(255, 255, 255, 0.12);
-      border-color: rgba(255, 255, 255, 0.2);
+    .tl-item.last { padding-bottom: 0; }
+    .tl-date {
+      font-size: 0.78rem; font-weight: 500; letter-spacing: 0.1em;
+      color: var(--muted); text-transform: uppercase; padding-top: 4px; text-align: right;
     }
-    .mobile-menu-close span {
-      display: block;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 22px;
-      height: 2px;
-      background: var(--white);
-      border-radius: 1px;
+    .tl-date-mobile { display: none; }
+    .tl-line { background: var(--border); position: relative; }
+    .tl-line .dot {
+      position: absolute; top: 6px; left: 50%; transform: translateX(-50%);
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--accent); box-shadow: var(--glow-dot);
     }
-    .mobile-menu-close span:first-child { transform: translate(-50%, -50%) rotate(45deg); }
-    .mobile-menu-close span:last-child  { transform: translate(-50%, -50%) rotate(-45deg); }
+    .tl-role { font-family: var(--font-display); font-weight: 700; font-size: 1.15rem; color: var(--white); margin-bottom: 4px; }
+    .tl-company { font-size: 0.82rem; font-weight: 500; letter-spacing: 0.06em; color: var(--accent); text-transform: uppercase; margin-bottom: 12px; }
+    .tl-desc { font-size: 0.92rem; line-height: 1.75; color: var(--muted); max-width: 520px; }
+    .tl-link {
+      display: inline-flex; align-items: center; gap: 8px; margin-top: 14px;
+      font-size: 0.82rem; font-weight: 500; letter-spacing: 0.04em;
+      color: var(--accent); text-decoration: none; transition: color var(--dur-fast);
+    }
+    .tl-link:hover { color: var(--white); }
 
-    .mobile-menu-nav {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 36px;
+    /* ── CTA strip ── */
+    .cta-strip {
+      padding: 100px 80px; text-align: center; border-top: 1px solid var(--border);
+      position: relative; overflow: hidden;
     }
-    .mobile-menu-link {
-      font-family: var(--font-display);
-      font-weight: 700;
-      font-size: 2rem;
-      letter-spacing: -0.01em;
-      color: var(--white);
-      text-decoration: none;
-      text-transform: none;
+    .cta-strip .glow { position: absolute; inset: 0; background: var(--glow-radial); pointer-events: none; }
+    .cta-strip h2 {
+      font-family: var(--font-display); font-weight: 800; font-size: var(--text-cta);
+      letter-spacing: -0.03em; margin-bottom: 20px; color: var(--white); position: relative;
     }
-    .mobile-menu-link.active { color: var(--accent); }
+    .cta-strip p { font-size: 1rem; color: var(--muted); margin-bottom: 40px; line-height: 1.7; position: relative; }
 
-    .mobile-menu-cta {
-      margin-top: 12px;
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: var(--accent);
-      color: var(--bg);
-      font-family: var(--font-body);
-      font-weight: 600;
-      font-size: 0.95rem;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      padding: 18px 36px;
-      border-radius: 2px;
-      text-decoration: none;
+    /* ── Footer ── */
+    .footer {
+      border-top: 1px solid var(--border); padding: 40px 80px;
+      display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 32px;
     }
+    .footer-brand { font-family: var(--font-display); font-weight: 700; font-size: 0.95rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--white); }
+    .footer-meta { font-size: 0.8rem; color: var(--muted); margin-top: 6px; }
+    .footer-links { display: flex; gap: 32px; flex-wrap: wrap; }
+    .footer-links a { font-size: 0.82rem; letter-spacing: 0.06em; color: var(--muted); text-decoration: none; transition: color var(--dur-fast); }
+    .footer-links a:hover { color: var(--accent); }
 
-    @media (max-width: 900px) {
-      nav > div { display: none !important; }
-      nav .nav-cta { display: none !important; }
-      .nav-toggle { display: flex; }
+    /* ── Mobile (≤768px) ── */
+    @media (max-width: 768px) {
+      .nav { padding: 16px 24px; }
+      .nav-brand { font-size: 0.88rem; }
+      .nav-links { display: none; }
+      .nav-burger { display: flex; }
+      .hero { padding: 110px 28px 70px; }
+      .hero-title { font-size: 48px; }
+      .hero-stats { gap: 24px; }
+      .skills { padding: 80px 28px; }
+      .skills .section-header { margin-bottom: 40px; }
+      .skill-grid { grid-template-columns: 1fr; }
+      .bio { padding: 80px 28px; }
+      .bio .section-header { margin-bottom: 40px; }
+      .bio-grid { grid-template-columns: 1fr; gap: 32px; }
+      .timeline { padding: 80px 28px; }
+      .timeline .section-header { margin-bottom: 40px; }
+      .tl-item { grid-template-columns: 1px 1fr; gap: 0 24px; padding-bottom: 44px; }
+      .tl-item.last { padding-bottom: 0; }
+      .tl-date { display: none; }
+      .tl-date-mobile {
+        display: block; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.1em;
+        color: var(--muted); text-transform: uppercase; margin-bottom: 8px;
+      }
+      .cta-strip { padding: 72px 28px; }
+      .footer { padding: 32px 28px; grid-template-columns: 1fr; align-items: start; gap: 20px; }
+      .footer-links { gap: 20px; }
     }
-    body.menu-open { overflow: hidden; }
   </style>
-  <script src="assets/favicon-loop.js" defer></script>
 </head>
 <body>
 
-  <!-- NAV -->
-  <nav>
-    <a class="nav-logo" href="index.html">Gianluca Centraco</a>
+  <nav class="nav">
+    <a href="index.html" class="nav-brand">Gianluca Centraco</a>
     <div class="nav-links">
       <a href="chi-sono.html" class="nav-link active">Chi sono</a>
       <a href="portfolio.html" class="nav-link">Portfolio</a>
       <a href="https://calendly.com/consulenza-gianlucacentra/30min" target="_blank" rel="noopener" class="nav-cta">Call gratuita →</a>
     </div>
-    <button class="nav-toggle" aria-label="Apri menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
+    <button class="nav-burger" id="nav-burger" aria-label="Apri menu" aria-expanded="false"><span></span><span></span></button>
+    <div class="nav-sheet" id="nav-sheet">
+      <a href="chi-sono.html" class="sheet-link active">Chi sono</a>
+      <a href="portfolio.html" class="sheet-link">Portfolio</a>
+      <a href="https://calendly.com/consulenza-gianlucacentra/30min" target="_blank" rel="noopener" class="nav-cta">Call gratuita →</a>
+    </div>
   </nav>
-
-  <!-- MOBILE MENU -->
-  <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
-    <button class="mobile-menu-close" aria-label="Chiudi menu">
-      <span></span><span></span>
-    </button>
-    <nav class="mobile-menu-nav">
-      <a class="mobile-menu-link" href="index.html">Home</a>
-      <a class="mobile-menu-link active" href="chi-sono.html">Chi sono</a>
-      <a class="mobile-menu-link" href="portfolio.html">Portfolio</a>
-      <a class="mobile-menu-cta" href="https://calendly.com/consulenza-gianlucacentra/30min" target="_blank" rel="noopener">Call gratuita →</a>
-    </nav>
-  </div>
-  <div class="mobile-menu-overlay" id="mobile-menu-overlay" aria-hidden="true"></div>
 
   <!-- HERO -->
   <section class="hero">
-    <canvas id="constellation-canvas"></canvas>
-
-    <div class="hero-text">
-      <div class="hero-eyebrow">Growth Consultant</div>
-      <h1 class="hero-name" style="font-size:70px;">Chi sono?</h1>
-      <p class="hero-tagline">
-        Da performance marketer a ricercatore. Da Arduino alla consulenza. Costruisco la crescita sui dati, non sulle intuizioni.
-      </p>
-      <div class="hero-stat-row">
-        <div class="hero-stat">
-          <span class="hero-stat-n">4</span>
-          <span class="hero-stat-l">anni in Arduino</span>
-        </div>
-        <div class="hero-stat">
-          <span class="hero-stat-n">PhD</span>
-          <span class="hero-stat-l">Business & Management</span>
-        </div>
-        <div class="hero-stat">
-          <span class="hero-stat-n">∞</span>
-          <span class="hero-stat-l">dati analizzati</span>
-        </div>
+    <canvas id="starfield" class="starfield" aria-hidden="true"></canvas>
+    <canvas id="hero-orbits" class="hero-orbits" aria-hidden="true"></canvas>
+    <div class="hero-content">
+      <div class="eyebrow"><span class="dash"></span>Growth Consultant</div>
+      <h1 class="hero-title">Chi sono?</h1>
+      <p class="hero-lead">Performance marketer di giorno, ricercatore di notte. Guido la crescita dei progetti a cui mi appassiono, collaborando con founder e team di prodotto come un vero e proprio Head of Growth on-demand.</p>
+      <div class="hero-stats">
+        <div class="stat-sm"><span class="value">4x</span><span class="label">ROAS medio nei progetti</span></div>
+        <div class="stat-sm"><span class="value">PhD</span><span class="label">Business &amp; Management</span></div>
+        <div class="stat-sm"><span class="value">∞</span><span class="label">dati analizzati</span></div>
       </div>
-    </div>
-
-    <div class="hero-face">
-      <canvas id="face-canvas" width="520" height="520"></canvas>
     </div>
   </section>
 
   <!-- SKILLS -->
-  <section class="section fade-up">
-    <div class="section-label">Competenze</div>
-    <h2 class="section-title">Cosa so fare.</h2>
-
-    <div class="skills-grid">
+  <section class="skills fade-up">
+    <div class="section-header">
+      <div class="eyebrow">Competenze</div>
+      <h2>Cosa so fare.</h2>
+    </div>
+    <div class="skill-grid">
       <div class="skill-item">
-        <svg class="skill-icon" viewBox="0 0 32 32" fill="none">
-          <circle cx="16" cy="16" r="3" fill="currentColor"/>
-          <circle cx="16" cy="16" r="10" stroke="currentColor" stroke-width="1" stroke-dasharray="3 3"/>
-          <circle cx="16" cy="16" r="15" stroke="currentColor" stroke-width="0.5" opacity="0.4"/>
-        </svg>
+        <div class="icon"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true"><circle cx="16" cy="16" r="3" fill="currentColor"></circle><circle cx="16" cy="16" r="10" stroke="currentColor" stroke-width="1" stroke-dasharray="3 3"></circle><circle cx="16" cy="16" r="15" stroke="currentColor" stroke-width="0.5" opacity="0.4"></circle></svg></div>
         <div class="skill-name">Data Tracking</div>
-        <p class="skill-desc">GA4, GTM, e-commerce events, pixel management, data layer design. Costruisco sistemi di misurazione che servono, senza inutili complicazioni.</p>
+        <p>GA4, GTM, e-commerce events, pixel management, data layer design. Costruisco sistemi di misurazione che servono, senza inutili complicazioni.</p>
       </div>
-
       <div class="skill-item">
-        <svg class="skill-icon" viewBox="0 0 32 32" fill="none">
-          <rect x="4" y="20" width="4" height="8" fill="currentColor" opacity="0.4"/>
-          <rect x="10" y="14" width="4" height="14" fill="currentColor" opacity="0.6"/>
-          <rect x="16" y="8" width="4" height="20" fill="currentColor" opacity="0.8"/>
-          <rect x="22" y="4" width="4" height="24" fill="currentColor"/>
-        </svg>
+        <div class="icon"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true"><rect x="4" y="20" width="4" height="8" fill="currentColor" opacity="0.4"></rect><rect x="10" y="14" width="4" height="14" fill="currentColor" opacity="0.6"></rect><rect x="16" y="8" width="4" height="20" fill="currentColor" opacity="0.8"></rect><rect x="22" y="4" width="4" height="24" fill="currentColor"></rect></svg></div>
         <div class="skill-name">Performance Marketing</div>
-        <p class="skill-desc">Meta Ads, Google Ads, campagne di acquisizione e retargeting. Specializzato in test rapidi di mercato per validare ipotesi a basso costo prima di scalare.</p>
+        <p>Meta Ads, Google Ads, campagne di acquisizione e retargeting. Specializzato in test rapidi di mercato per validare ipotesi a basso costo prima di scalare.</p>
       </div>
-
       <div class="skill-item">
-        <svg class="skill-icon" viewBox="0 0 32 32" fill="none">
-          <path d="M4 28 L12 18 L18 22 L28 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          <circle cx="28" cy="8" r="2" fill="currentColor"/>
-        </svg>
+        <div class="icon"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M4 28 L12 18 L18 22 L28 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><circle cx="28" cy="8" r="2" fill="currentColor"></circle></svg></div>
         <div class="skill-name">Growth Strategy</div>
-        <p class="skill-desc">Traduco i dati raccolti nelle fasi precedenti in decisioni concrete di crescita e piani d'azione misurabili.</p>
+        <p>Traduco i dati raccolti nelle fasi precedenti in decisioni concrete di crescita e piani d'azione misurabili.</p>
       </div>
-
       <div class="skill-item">
-        <svg class="skill-icon" viewBox="0 0 32 32" fill="none">
-          <rect x="4" y="4" width="10" height="10" stroke="currentColor" stroke-width="1.2"/>
-          <rect x="18" y="4" width="10" height="10" stroke="currentColor" stroke-width="1.2"/>
-          <rect x="4" y="18" width="10" height="10" stroke="currentColor" stroke-width="1.2"/>
-          <rect x="18" y="18" width="10" height="10" stroke="currentColor" stroke-width="1.2"/>
-        </svg>
+        <div class="icon"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true"><rect x="4" y="4" width="10" height="10" stroke="currentColor" stroke-width="1.2"></rect><rect x="18" y="4" width="10" height="10" stroke="currentColor" stroke-width="1.2"></rect><rect x="4" y="18" width="10" height="10" stroke="currentColor" stroke-width="1.2"></rect><rect x="18" y="18" width="10" height="10" stroke="currentColor" stroke-width="1.2"></rect></svg></div>
         <div class="skill-name">A/B Testing &amp; CRO</div>
-        <p class="skill-desc">Progettazione e analisi di esperimenti. Dal test delle landing page all'ottimizzazione del funnel, con approccio statistico e focus sui KPI che contano.</p>
+        <p>Progettazione e analisi di esperimenti. Dal test delle landing page all'ottimizzazione del funnel, con approccio statistico e focus sui KPI che contano.</p>
       </div>
-
       <div class="skill-item">
-        <svg class="skill-icon" viewBox="0 0 32 32" fill="none">
-          <path d="M16 4 L28 10 L28 22 L16 28 L4 22 L4 10 Z" stroke="currentColor" stroke-width="1.2"/>
-          <path d="M16 4 L16 28 M4 10 L28 22 M28 10 L4 22" stroke="currentColor" stroke-width="0.5" opacity="0.4"/>
-        </svg>
+        <div class="icon"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M16 4 L28 10 L28 22 L16 28 L4 22 L4 10 Z" stroke="currentColor" stroke-width="1.2"></path><path d="M16 4 L16 28 M4 10 L28 22 M28 10 L4 22" stroke="currentColor" stroke-width="0.5" opacity="0.4"></path></svg></div>
         <div class="skill-name">Product Management</div>
-        <p class="skill-desc">Esperienza diretta come Product Owner in contesto internazionale. Roadmap, backlog prioritization, collaborazione cross-funzionale e shipping orientato al risultato.</p>
+        <p>Esperienza diretta come Product Owner in contesto internazionale. Roadmap, backlog prioritization, collaborazione cross-funzionale e shipping orientato al risultato.</p>
       </div>
-
       <div class="skill-item">
-        <svg class="skill-icon" viewBox="0 0 32 32" fill="none">
-          <circle cx="8" cy="16" r="3" stroke="currentColor" stroke-width="1.2"/>
-          <circle cx="24" cy="8" r="3" stroke="currentColor" stroke-width="1.2"/>
-          <circle cx="24" cy="24" r="3" stroke="currentColor" stroke-width="1.2"/>
-          <line x1="11" y1="14.5" x2="21" y2="9.5" stroke="currentColor" stroke-width="0.8"/>
-          <line x1="11" y1="17.5" x2="21" y2="22.5" stroke="currentColor" stroke-width="0.8"/>
-        </svg>
+        <div class="icon"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true"><circle cx="8" cy="16" r="3" stroke="currentColor" stroke-width="1.2"></circle><circle cx="24" cy="8" r="3" stroke="currentColor" stroke-width="1.2"></circle><circle cx="24" cy="24" r="3" stroke="currentColor" stroke-width="1.2"></circle><line x1="11" y1="14.5" x2="21" y2="9.5" stroke="currentColor" stroke-width="0.8"></line><line x1="11" y1="17.5" x2="21" y2="22.5" stroke="currentColor" stroke-width="0.8"></line></svg></div>
         <div class="skill-name">Analytics &amp; BI</div>
-        <p class="skill-desc">Trasformo raw data in dashboard che guidano decisioni.</p>
+        <p>Trasformo raw data in dashboard che guidano decisioni.</p>
+      </div>
+      <div class="skill-item full">
+        <div class="icon"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true"><rect x="4" y="14" width="6" height="6" stroke="currentColor" stroke-width="1.2"></rect><rect x="22" y="14" width="6" height="6" stroke="currentColor" stroke-width="1.2"></rect><path d="M10 17 H21" stroke="currentColor" stroke-width="1.2"></path><path d="M18.6 14.6 L21 17 L18.6 19.4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" fill="none"></path><path d="M25 14 C25 5.5, 7 5.5, 7 14" stroke="currentColor" stroke-width="0.8" opacity="0.5" fill="none"></path><path d="M5.2 12 L7 14 L8.8 12" stroke="currentColor" stroke-width="0.8" opacity="0.5" stroke-linecap="round" stroke-linejoin="round" fill="none"></path></svg></div>
+        <div class="skill-name">Automazione</div>
+        <p>Costruisco e implemento sistemi di automazione, processuale e tecnologica: workflow, integrazioni tra strumenti e AI che eliminano il lavoro manuale e fanno scalare le operations.</p>
       </div>
     </div>
   </section>
 
   <!-- BIO -->
-  <section class="section fade-up">
-    <div class="section-label">La storia</div>
-    <h2 class="section-title">Un percorso<br/>non lineare.</h2>
-
+  <section class="bio fade-up">
+    <div class="section-header">
+      <div class="eyebrow">La storia</div>
+      <h2>Un percorso<br>non lineare.</h2>
+    </div>
     <div class="bio-grid">
-      <div class="bio-lead">
+      <div class="bio-statement">
         Ho imparato che la crescita vera non si improvvisa. <em>TUTTO parte dal dato.</em> Da lì si misura, si testa, si corregge.
       </div>
-      <div class="bio-body">
-        <p>
-          Ho trascorso quasi <strong>quattro anni in Arduino</strong>, il brand che ha democratizzato l'elettronica nel mondo, come Performance Marketing Manager e come Product Owner. Lì ho imparato cosa significa gestire budget pubblicitari su scala internazionale, ottimizzare funnel complessi e prendere decisioni di prodotto con impatto diretto sui ricavi.
-        </p>
-        <p>
-          Arduino non è un'azienda ordinaria: operare in un contesto globale, con un pubblico tecnico ed esigente, mi ha insegnato a costruire sistemi di tracking affidabili, a interpretare i dati senza illudermi, e a distinguere tra ciò che funziona davvero e ciò che sembra funzionare.
-        </p>
-        <p>
-          Ho lasciato quel ruolo per intraprendere un <strong>dottorato in Business & Management</strong>, con l'obiettivo di studiare tecnologie innovative applicate al marketing e di portare rigore metodologico al campo della crescita digitale, applicando strumenti di ricerca accademica a problemi concreti di business.
-        </p>
-        <p>
-          In parallelo ho avviato la mia attività di consulenza, lavorando con founder e team digitali per aiutarli a <strong>misurare ciò che conta, validare le idee prima di investire in scala, e scalare ciò che funziona</strong>.
-        </p>
+      <div class="bio-text">
+        <p>Ho trascorso quasi <strong>quattro anni in Arduino</strong>, il brand che ha democratizzato l'elettronica nel mondo, come Performance Marketing Manager e come Product Owner. Lì ho imparato cosa significa gestire budget pubblicitari su scala internazionale, ottimizzare funnel complessi e prendere decisioni di prodotto con impatto diretto sui ricavi.</p>
+        <p>Ho lasciato quel ruolo per intraprendere un <strong>dottorato in Business &amp; Management</strong>, con l'obiettivo di studiare tecnologie innovative applicate al marketing e di portare rigore metodologico al campo della crescita digitale.</p>
+        <p>In parallelo ho avviato la mia attività di consulenza, lavorando con founder e team digitali per aiutarli a <strong>misurare ciò che conta, validare le idee prima di investire in scala, e scalare ciò che funziona</strong>.</p>
       </div>
     </div>
   </section>
 
   <!-- TIMELINE -->
-  <section class="section fade-up">
-    <div class="section-label">Percorso</div>
-    <h2 class="section-title">Timeline.</h2>
-
-    <div class="timeline">
+  <section class="timeline fade-up">
+    <div class="section-header">
+      <div class="eyebrow">Percorso</div>
+      <h2>Timeline.</h2>
+    </div>
+    <div class="timeline-list">
       <div class="tl-item">
-        <div class="tl-date">2024 — oggi</div>
-        <div class="tl-line"></div>
-        <div class="tl-content">
+        <div class="tl-date">2024 - oggi</div>
+        <div class="tl-line"><span class="dot"></span></div>
+        <div>
+          <div class="tl-date-mobile">2024 - oggi</div>
           <div class="tl-role">Growth Consultant: Tracking, PPC &amp; Validation</div>
           <div class="tl-company">Freelance</div>
           <p class="tl-desc">Aiuto startup early-stage e business digitali a prendere decisioni di crescita più efficaci attraverso tracciamento, sperimentazione rapida e validazione del prodotto con test mirati e a basso budget.</p>
         </div>
       </div>
-
       <div class="tl-item">
-        <div class="tl-date">2024 — oggi</div>
-        <div class="tl-line"></div>
-        <div class="tl-content">
-          <div class="tl-role">PhD Candidate — Business & Management</div>
+        <div class="tl-date">2024 - oggi</div>
+        <div class="tl-line"><span class="dot"></span></div>
+        <div>
+          <div class="tl-date-mobile">2024 - oggi</div>
+          <div class="tl-role">PhD Candidate in Business &amp; Management</div>
           <div class="tl-company">Università</div>
-          <p class="tl-desc">Ricerca (pubblicata su riviste internazionali) applicata all'intersezione tra growth strategy, behavioral data e tecnologie emergenti implementate nel digital marketing. L'obiettivo è portare rigore accademico alla pratica del growth management.</p>
+          <p class="tl-desc">Ricerca (pubblicata su riviste internazionali) applicata all'intersezione tra growth strategy, behavioral data e tecnologie emergenti implementate nel digital marketing.</p>
+          <a class="tl-link" href="https://scholar.google.com.au/citations?user=idLfVH8AAAAJ&amp;hl=en&amp;oi=ao" target="_blank" rel="noopener">Guarda i prodotti della mia ricerca →</a>
         </div>
       </div>
-
-      <div class="tl-item">
-        <div class="tl-date">2020 — 2024</div>
-        <div class="tl-line"></div>
-        <div class="tl-content">
-          <div class="tl-role">Performance Marketing Manager & Product Owner</div>
+      <div class="tl-item last">
+        <div class="tl-date">2020 - 2024</div>
+        <div class="tl-line"><span class="dot"></span></div>
+        <div>
+          <div class="tl-date-mobile">2020 - 2024</div>
+          <div class="tl-role">Performance Marketing Manager &amp; Product Owner</div>
           <div class="tl-company">Arduino</div>
           <p class="tl-desc">Quasi quattro anni in uno dei brand hardware più iconici al mondo. Ho gestito campagne paid a scala globale (Meta, Google, Reddit, X, etc.), costruito pipeline di analytics e guidato decisioni di prodotto basate sui dati per il segmento maker, education e cloud.</p>
         </div>
@@ -886,18 +529,17 @@
 
   <!-- CTA -->
   <div class="cta-strip fade-up">
-    <h2>Parliamo del tuo<br/>progetto.</h2>
+    <div class="glow"></div>
+    <h2>Parliamo del tuo<br>progetto.</h2>
     <p>20 minuti gratuiti. Nessun impegno.</p>
-    <a class="btn-primary" href="https://calendly.com/consulenza-gianlucacentra/30min" target="_blank" rel="noopener">
-      Prenota la call gratuita →
-    </a>
+    <a class="btn" href="https://calendly.com/consulenza-gianlucacentra/30min" target="_blank" rel="noopener">Prenota la call gratuita →</a>
   </div>
 
   <!-- FOOTER -->
-  <footer>
+  <footer class="footer">
     <div>
-      <div class="nav-logo">Gianluca Centraco</div>
-      <p>Growth Consultant · Torino &nbsp;·&nbsp; P.IVA: 13443610012</p>
+      <div class="footer-brand">Gianluca Centraco</div>
+      <p class="footer-meta">Growth Consultant · Torino &nbsp;·&nbsp; P.IVA: 13443610012</p>
     </div>
     <div class="footer-links">
       <a href="https://www.linkedin.com/in/gianluca-centraco/" target="_blank" rel="noopener">LinkedIn</a>
@@ -906,295 +548,182 @@
     </div>
   </footer>
 
-  <!-- CONSTELLATION BACKGROUND -->
   <script>
-  (function(){
-    const c = document.getElementById('constellation-canvas');
-    if (!c) return;
-    const ctx = c.getContext('2d');
-    let W, H, stars = [], conLines = [];
-    const STAR_N = 280;
+  (function () {
+    'use strict';
 
-    function resize(){
-      W = c.width = c.offsetWidth;
-      H = c.height = c.offsetHeight;
-      stars = [];
-      for (let i = 0; i < STAR_N; i++) {
-        stars.push({
-          x: Math.random()*W,
-          y: Math.random()*H,
-          r: Math.random()*1.1+0.2,
-          a: Math.random()*0.45+0.05,
-          sp: Math.random()*0.6+0.2,
-          ph: Math.random()*Math.PI*2
-        });
-      }
-      // Connect nearby stars as constellation lines
-      conLines = [];
-      for (let i = 0; i < stars.length; i++) {
-        for (let j = i+1; j < stars.length; j++) {
-          const dx = stars[i].x-stars[j].x;
-          const dy = stars[i].y-stars[j].y;
-          const d = Math.sqrt(dx*dx+dy*dy);
-          if (d < 90 && Math.random() < 0.12) {
-            conLines.push([i,j]);
-          }
-        }
-      }
-    }
-
-    function tick(t){
-      requestAnimationFrame(tick);
-      ctx.clearRect(0,0,W,H);
-      conLines.forEach(([i,j])=>{
-        ctx.beginPath();
-        ctx.moveTo(stars[i].x, stars[i].y);
-        ctx.lineTo(stars[j].x, stars[j].y);
-        ctx.strokeStyle = 'rgba(200,255,0,0.04)';
-        ctx.lineWidth = 0.5;
-        ctx.stroke();
-      });
-      stars.forEach(s=>{
-        const a = s.a * (0.5 + 0.5*Math.sin(t*0.001*s.sp + s.ph));
-        ctx.beginPath();
-        ctx.arc(s.x, s.y, s.r, 0, Math.PI*2);
-        ctx.fillStyle = `rgba(210,215,220,${a})`;
-        ctx.fill();
-      });
-    }
-
-    resize();
-    requestAnimationFrame(tick);
-    new ResizeObserver(resize).observe(c.parentElement);
-  })();
-  </script>
-
-  <!-- FACE CONSTELLATION -->
-  <script>
-  (function(){
-    const canvas = document.getElementById('face-canvas');
-    if (!canvas) return;
-    const ctx = canvas.getContext('2d');
-    const S = 520; // canvas size
-    let time = 0;
-
-    // Key points of face (normalized 0-1, will be scaled to S×S)
-    // These form the outline + key features of a male face looking slightly left
-    const rawPts = {
-      // Face outline / jaw
-      jaw: [
-        [0.36, 0.22], // top-left temple
-        [0.30, 0.30], // left cheek high
-        [0.27, 0.42], // left cheek
-        [0.28, 0.58], // left jaw
-        [0.34, 0.70], // left chin-jaw
-        [0.42, 0.76], // left chin
-        [0.50, 0.78], // chin center
-        [0.58, 0.76], // right chin
-        [0.66, 0.70], // right chin-jaw
-        [0.72, 0.58], // right jaw
-        [0.73, 0.42], // right cheek
-        [0.70, 0.30], // right cheek high
-        [0.64, 0.22], // top-right temple
-      ],
-      // Forehead arc
-      forehead: [
-        [0.36, 0.22],
-        [0.40, 0.14],
-        [0.50, 0.10],
-        [0.60, 0.14],
-        [0.64, 0.22],
-      ],
-      // Left eye
-      leftEye: [
-        [0.37, 0.36], [0.41, 0.33], [0.45, 0.33], [0.48, 0.36],
-        [0.45, 0.39], [0.41, 0.39], [0.37, 0.36],
-      ],
-      // Right eye
-      rightEye: [
-        [0.52, 0.36], [0.56, 0.33], [0.60, 0.33], [0.63, 0.36],
-        [0.60, 0.39], [0.56, 0.39], [0.52, 0.36],
-      ],
-      // Nose
-      nose: [
-        [0.50, 0.42],
-        [0.47, 0.55],
-        [0.45, 0.57],
-        [0.50, 0.58],
-        [0.55, 0.57],
-        [0.53, 0.55],
-        [0.50, 0.42],
-      ],
-      // Mouth
-      mouth: [
-        [0.43, 0.64], [0.47, 0.62], [0.50, 0.63], [0.53, 0.62], [0.57, 0.64],
-        [0.54, 0.68], [0.50, 0.69], [0.46, 0.68], [0.43, 0.64],
-      ],
-      // Left eyebrow
-      lBrow: [[0.36, 0.30], [0.40, 0.28], [0.45, 0.27], [0.49, 0.29]],
-      // Right eyebrow
-      rBrow: [[0.51, 0.29], [0.55, 0.27], [0.60, 0.28], [0.64, 0.30]],
-      // Left ear hint
-      lEar: [[0.27, 0.42], [0.24, 0.46], [0.25, 0.52], [0.28, 0.55]],
-      // Right ear hint
-      rEar: [[0.73, 0.42], [0.76, 0.46], [0.75, 0.52], [0.72, 0.55]],
-    };
-
-    // Scale to canvas
-    const PAD = 40;
-    const RNG = S - PAD*2;
-    function sc(pt){ return [PAD + pt[0]*RNG, PAD + pt[1]*RNG]; }
-
-    // Collect all unique points for star nodes
-    const allPts = [];
-    const ptSet = new Set();
-    Object.values(rawPts).forEach(group => {
-      group.forEach(p => {
-        const key = p[0].toFixed(3)+','+p[1].toFixed(3);
-        if (!ptSet.has(key)) {
-          ptSet.add(key);
-          allPts.push({
-            raw: p,
-            twinkle: Math.random()*Math.PI*2,
-            tspeed: 0.4+Math.random()*1.2,
-            size: 1.5 + Math.random()*2,
-          });
-        }
+    /* ── Mobile nav ── */
+    var burger = document.getElementById('nav-burger');
+    var sheet = document.getElementById('nav-sheet');
+    burger.addEventListener('click', function () {
+      var open = sheet.classList.toggle('open');
+      burger.classList.toggle('open', open);
+      burger.setAttribute('aria-label', open ? 'Chiudi menu' : 'Apri menu');
+      burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    sheet.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', function () {
+        sheet.classList.remove('open');
+        burger.classList.remove('open');
       });
     });
 
-    // Add some scattered background stars
-    const bgStars = [];
-    for (let i=0; i<60; i++){
-      bgStars.push({
-        x: Math.random()*S, y: Math.random()*S,
-        r: Math.random()*0.7+0.2,
-        a: Math.random()*0.25+0.03,
-        ph: Math.random()*Math.PI*2,
-        sp: Math.random()*0.5+0.2,
-      });
-    }
-
-    function drawGroup(group, alpha){
-      if (group.length < 2) return;
-      ctx.beginPath();
-      const [x0,y0] = sc(group[0]);
-      ctx.moveTo(x0,y0);
-      for (let i=1; i<group.length; i++){
-        const [x,y] = sc(group[i]);
-        ctx.lineTo(x,y);
-      }
-      ctx.strokeStyle = `rgba(200,255,0,${0.28 * alpha})`;
-      ctx.lineWidth = 0.8;
-      ctx.stroke();
-    }
-
-    function frame(t){
-      requestAnimationFrame(frame);
-      time = t * 0.001;
-      ctx.clearRect(0,0,S,S);
-
-      // Background
-      ctx.fillStyle='#06060c';
-      ctx.fillRect(0,0,S,S);
-
-      // BG stars
-      bgStars.forEach(s=>{
-        const a = s.a * (0.5+0.5*Math.sin(time*s.sp+s.ph));
-        ctx.beginPath();
-        ctx.arc(s.x, s.y, s.r, 0, Math.PI*2);
-        ctx.fillStyle=`rgba(200,210,220,${a})`;
-        ctx.fill();
-      });
-
-      // Constellation lines — face features
-      Object.values(rawPts).forEach(grp => drawGroup(grp, 1));
-
-      // Star nodes
-      allPts.forEach(p => {
-        const [x,y] = sc(p.raw);
-        const pulse = 0.55 + 0.45*Math.sin(time*p.tspeed + p.twinkle);
-        const r = p.size * (0.8 + 0.2*pulse);
-        const a = 0.4 + 0.6*pulse;
-
-        // Outer glow
-        const grd = ctx.createRadialGradient(x,y,0,x,y,r*4);
-        grd.addColorStop(0, `rgba(200,255,0,${a*0.4})`);
-        grd.addColorStop(1, 'rgba(0,0,0,0)');
-        ctx.beginPath();
-        ctx.arc(x,y,r*4,0,Math.PI*2);
-        ctx.fillStyle=grd;
-        ctx.fill();
-
-        // Core star
-        ctx.beginPath();
-        ctx.arc(x,y,r,0,Math.PI*2);
-        ctx.fillStyle=`rgba(240,255,200,${a})`;
-        ctx.fill();
-      });
-
-      // Scanning line — slow horizontal sweep
-      const scanY = (S * ((time * 0.04) % 1));
-      const scanGrd = ctx.createLinearGradient(0, scanY-20, 0, scanY+20);
-      scanGrd.addColorStop(0, 'rgba(200,255,0,0)');
-      scanGrd.addColorStop(0.5, 'rgba(200,255,0,0.06)');
-      scanGrd.addColorStop(1, 'rgba(200,255,0,0)');
-      ctx.fillStyle=scanGrd;
-      ctx.fillRect(0, scanY-20, S, 40);
-    }
-
-    requestAnimationFrame(frame);
-  })();
-  </script>
-
-  <!-- SCROLL FADE -->
-  <script>
-  (function(){
-    const els = document.querySelectorAll('.fade-up');
-    const obs = new IntersectionObserver(entries => {
-      entries.forEach(e => {
-        if (e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); }
+    /* ── Scroll reveal ── */
+    var obs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
       });
     }, { threshold: 0.1 });
-    els.forEach(el => obs.observe(el));
+    document.querySelectorAll('.fade-up').forEach(function (el) { obs.observe(el); });
+
+    /* ── Star field (stars + constellations + nebula + shooting stars) ── */
+    (function () {
+      var c = document.getElementById('starfield');
+      var ctx = c.getContext('2d');
+      var W, H, stars = [], lines = [], blobs = [], meteors = [], nextMeteor = 2;
+      var density = 1700;
+
+      function resize() {
+        W = c.width = c.offsetWidth;
+        H = c.height = c.offsetHeight;
+        stars = [];
+        var n = Math.max(120, Math.floor((W * H) / density));
+        for (var i = 0; i < n; i++) {
+          stars.push({
+            x: Math.random() * W, y: Math.random() * H,
+            r: Math.random() * 0.95 + 0.15, a: Math.random() * 0.5 + 0.05,
+            sp: 0.2 + Math.random() * 0.6, ph: Math.random() * Math.PI * 2
+          });
+        }
+        lines = [];
+        for (var a = 0; a < stars.length; a++) {
+          for (var b = a + 1; b < stars.length; b++) {
+            var dx = stars[a].x - stars[b].x;
+            var dy = stars[a].y - stars[b].y;
+            if (dx * dx + dy * dy < 8100 && Math.random() < 0.12) lines.push([a, b]);
+          }
+        }
+        var R = Math.min(W, H);
+        blobs = [
+          { x: W * 0.72, y: H * 0.28, r: R * 0.55, col: '200,255,0', a: 0.032, sp: 0.05, ph: 0 },
+          { x: W * 0.24, y: H * 0.74, r: R * 0.60, col: '160,190,255', a: 0.022, sp: 0.04, ph: 2 },
+          { x: W * 0.50, y: H * 0.12, r: R * 0.42, col: '200,255,0', a: 0.017, sp: 0.06, ph: 4 }
+        ];
+      }
+
+      function tick(t) {
+        requestAnimationFrame(tick);
+        var time = t * 0.001;
+        ctx.clearRect(0, 0, W, H);
+        blobs.forEach(function (b) {
+          var bx = b.x + Math.sin(time * b.sp + b.ph) * W * 0.03;
+          var by = b.y + Math.cos(time * b.sp * 0.8 + b.ph) * H * 0.03;
+          var a = b.a * (0.8 + 0.2 * Math.sin(time * 0.3 + b.ph));
+          var g = ctx.createRadialGradient(bx, by, 0, bx, by, b.r);
+          g.addColorStop(0, 'rgba(' + b.col + ',' + a + ')');
+          g.addColorStop(1, 'rgba(' + b.col + ',0)');
+          ctx.fillStyle = g;
+          ctx.fillRect(bx - b.r, by - b.r, b.r * 2, b.r * 2);
+        });
+        lines.forEach(function (l) {
+          ctx.beginPath();
+          ctx.moveTo(stars[l[0]].x, stars[l[0]].y);
+          ctx.lineTo(stars[l[1]].x, stars[l[1]].y);
+          ctx.strokeStyle = 'rgba(200,255,0,0.04)';
+          ctx.lineWidth = 0.5;
+          ctx.stroke();
+        });
+        stars.forEach(function (s) {
+          var a = s.a * (0.5 + 0.5 * Math.sin(time * s.sp + s.ph));
+          ctx.beginPath();
+          ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+          ctx.fillStyle = 'rgba(215,220,228,' + a + ')';
+          ctx.fill();
+        });
+        if (time > nextMeteor && meteors.length < 2) {
+          meteors.push({ x: W * (0.15 + Math.random() * 0.7), y: H * Math.random() * 0.3, vx: (2.2 + Math.random() * 2) * (Math.random() < 0.5 ? -1 : 1), vy: 1.1 + Math.random() * 0.9, life: 0 });
+          nextMeteor = time + 3 + Math.random() * 5;
+        }
+        meteors = meteors.filter(function (m) { return m.life < 1 && m.y < H + 30 && m.x > -30 && m.x < W + 30; });
+        meteors.forEach(function (m) {
+          m.life += 0.014; m.x += m.vx * 3.2; m.y += m.vy * 3.2;
+          var a = Math.sin(Math.min(1, m.life) * Math.PI) * 0.8;
+          var g = ctx.createLinearGradient(m.x, m.y, m.x - m.vx * 12, m.y - m.vy * 12);
+          g.addColorStop(0, 'rgba(235,245,255,' + a + ')');
+          g.addColorStop(1, 'rgba(235,245,255,0)');
+          ctx.strokeStyle = g; ctx.lineWidth = 1.1;
+          ctx.beginPath(); ctx.moveTo(m.x, m.y); ctx.lineTo(m.x - m.vx * 12, m.y - m.vy * 12); ctx.stroke();
+        });
+      }
+
+      resize();
+      requestAnimationFrame(tick);
+      new ResizeObserver(resize).observe(c.parentElement);
+    })();
+
+    /* ── Hero orbits: dashed concentric ellipses, orbiting dots, ringed planet ── */
+    (function () {
+      var canvas = document.getElementById('hero-orbits');
+      var ctx = canvas.getContext('2d');
+      var W, H;
+      function resize() {
+        W = canvas.width = canvas.offsetWidth;
+        H = canvas.height = canvas.offsetHeight;
+      }
+      function pos(cx, cy, rx, ry, rot, a) {
+        return [
+          cx + Math.cos(a) * rx * Math.cos(rot) - Math.sin(a) * ry * Math.sin(rot),
+          cy + Math.cos(a) * rx * Math.sin(rot) + Math.sin(a) * ry * Math.cos(rot)
+        ];
+      }
+      function frame(t) {
+        requestAnimationFrame(frame);
+        var time = t * 0.001;
+        ctx.clearRect(0, 0, W, H);
+        var cx = W * 0.64, cy = H * 0.54;
+        var rings = [
+          { rx: W * 0.50, ry: W * 0.155, rot: -0.16, a: 0.11, dash: [4, 9] },
+          { rx: W * 0.38, ry: W * 0.115, rot: -0.16, a: 0.085, dash: [3, 8] },
+          { rx: W * 0.27, ry: W * 0.080, rot: -0.16, a: 0.06, dash: [2, 7] }
+        ];
+        rings.forEach(function (r, i) {
+          var rot = r.rot + Math.sin(time * 0.07 + i) * 0.012;
+          ctx.beginPath();
+          ctx.ellipse(cx, cy, r.rx, r.ry, rot, 0, Math.PI * 2);
+          ctx.setLineDash(r.dash);
+          ctx.lineDashOffset = -time * 6 * (i % 2 ? -1 : 1);
+          ctx.strokeStyle = 'rgba(200,255,0,' + r.a + ')';
+          ctx.lineWidth = 0.8;
+          ctx.stroke();
+          ctx.setLineDash([]);
+          ctx.lineDashOffset = 0;
+        });
+        [{ ring: 0, sp: 0.05, ph: 2.4, r: 2.2 }, { ring: 1, sp: -0.07, ph: 0.6, r: 1.7 }, { ring: 2, sp: 0.09, ph: 4.4, r: 1.4 }].forEach(function (o) {
+          var rr = rings[o.ring];
+          var p = pos(cx, cy, rr.rx, rr.ry, rr.rot, time * o.sp * Math.PI * 2 + o.ph);
+          var g = ctx.createRadialGradient(p[0], p[1], 0, p[0], p[1], o.r * 5);
+          g.addColorStop(0, 'rgba(200,255,0,0.35)'); g.addColorStop(1, 'rgba(200,255,0,0)');
+          ctx.beginPath(); ctx.arc(p[0], p[1], o.r * 5, 0, Math.PI * 2); ctx.fillStyle = g; ctx.fill();
+          ctx.beginPath(); ctx.arc(p[0], p[1], o.r, 0, Math.PI * 2); ctx.fillStyle = 'rgba(230,255,180,0.85)'; ctx.fill();
+        });
+        var rr0 = rings[0];
+        var pp = pos(cx, cy, rr0.rx, rr0.ry, rr0.rot, time * 0.018 * Math.PI * 2 + 5.1);
+        ctx.save(); ctx.translate(pp[0], pp[1]); ctx.rotate(-0.4);
+        ctx.beginPath(); ctx.ellipse(0, 0, 13, 4.4, 0, 0, Math.PI * 2);
+        ctx.strokeStyle = 'rgba(200,255,0,0.30)'; ctx.lineWidth = 0.8; ctx.stroke();
+        ctx.beginPath(); ctx.arc(0, 0, 5.6, 0, Math.PI * 2);
+        ctx.fillStyle = '#06060c'; ctx.fill();
+        ctx.strokeStyle = 'rgba(200,255,0,0.5)'; ctx.lineWidth = 0.9; ctx.stroke();
+        ctx.beginPath(); ctx.ellipse(0, 0, 13, 4.4, 0, Math.PI * 0.05, Math.PI * 0.95);
+        ctx.strokeStyle = 'rgba(200,255,0,0.42)'; ctx.stroke();
+        ctx.restore();
+      }
+      resize();
+      requestAnimationFrame(frame);
+      new ResizeObserver(resize).observe(canvas.parentElement);
+    })();
   })();
   </script>
-
-  <!-- MOBILE MENU TOGGLE -->
-  <script>
-  (function(){
-    const toggle = document.querySelector('.nav-toggle');
-    const menu = document.getElementById('mobile-menu');
-    const overlay = document.getElementById('mobile-menu-overlay');
-    const closeBtn = document.querySelector('.mobile-menu-close');
-    if (!toggle || !menu) return;
-
-    function open(){
-      menu.classList.add('open');
-      if (overlay) overlay.classList.add('open');
-      menu.setAttribute('aria-hidden', 'false');
-      toggle.setAttribute('aria-expanded', 'true');
-      document.body.classList.add('menu-open');
-    }
-    function close(){
-      menu.classList.remove('open');
-      if (overlay) overlay.classList.remove('open');
-      menu.setAttribute('aria-hidden', 'true');
-      toggle.setAttribute('aria-expanded', 'false');
-      document.body.classList.remove('menu-open');
-    }
-
-    toggle.addEventListener('click', open);
-    if (closeBtn) closeBtn.addEventListener('click', close);
-    if (overlay) overlay.addEventListener('click', close);
-    menu.querySelectorAll('.mobile-menu-link, .mobile-menu-cta').forEach(a => {
-      a.addEventListener('click', close);
-    });
-    document.addEventListener('keydown', e => {
-      if (e.key === 'Escape' && menu.classList.contains('open')) close();
-    });
-  })();
-  </script>
-
+  <script src="assets/favicon-loop.js" defer></script>
 </body>
 </html>

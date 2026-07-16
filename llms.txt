@@ -1,20 +1,20 @@
 # Gianluca Centraco — Growth Consultant
 
-> Growth Consultant a Torino specializzato in tracking, performance marketing e validazione di prodotti digitali. PhD candidate in Business & Management, ex-Performance Marketing Manager e Product Owner in Arduino.
+> Growth Consultant e Fractional CMO a Torino specializzato in tracking, performance marketing, validazione di prodotti digitali e automazione. PhD candidate in Business & Management, ex-Performance Marketing Manager e Product Owner in Arduino.
 
-Il sito è la presenza professionale di Gianluca Centraco, consulente freelance che aiuta founder e business digitali a misurare ciò che conta, validare idee a basso costo e scalare ciò che funziona. Approccio basato su rigore metodologico portato dalla ricerca accademica applicato a contesti business reali.
+Il sito è la presenza professionale di Gianluca Centraco, consulente freelance che aiuta founder e business digitali a misurare ciò che conta, validare idee a basso costo e scalare ciò che funziona, come un Head of Growth on demand: dalla strategia all'esecuzione. Approccio basato su rigore metodologico portato dalla ricerca accademica applicato a contesti business reali.
 
 ## Pagine principali
 
-- [Home](https://gianlucacentra.com/): panoramica dei tre servizi principali — tracking & data, validazione tramite paid ads, growth scaling. Spiega il metodo in quattro fasi (diagnosi, tracking setup, test & validate, scale).
+- [Home](https://gianlucacentra.com/): panoramica dei tre servizi principali (tracking & data, validazione tramite paid ads, growth scaling) e delle quattro leve di lavoro: infrastruttura dati, validazione rapida, scaling e automazione. Spiega il metodo in quattro fasi (diagnosi, tracking setup, test & validate, scale) e l'ampiezza del lavoro da Head of Growth: strategia & positioning, acquisizione full-funnel, funnel/CRO/retention, data/martech/automazione, processi & team.
 - [Chi sono](https://gianlucacentra.com/chi-sono.html): biografia professionale, percorso da Performance Marketing Manager in Arduino al PhD, competenze tecniche (GA4, GTM, Meta Ads, Google Ads, A/B testing, product management), timeline di carriera 2020-oggi.
 - [Portfolio](https://gianlucacentra.com/portfolio.html): casi studio e progetti per area (tracking, paid ads, validazione), incluso il lavoro in Arduino.
 
 ## Identità professionale
 
-- **Ruolo attuale**: Growth Consultant freelance + PhD Candidate in Business & Management presso Università degli Studi di Torino
+- **Ruolo attuale**: Growth Consultant / Fractional CMO freelance + PhD Candidate in Business & Management presso Università degli Studi di Torino
 - **Esperienza precedente**: Performance Marketing Manager & Product Owner in Arduino (2020-2024)
-- **Aree di expertise**: Performance Marketing, Growth Strategy, Data Tracking, Google Analytics 4, Google Tag Manager, Meta Ads, Google Ads, A/B Testing, Conversion Rate Optimization, Product Management, Behavioral Data Analysis
+- **Aree di expertise**: Performance Marketing, Growth Strategy, Data Tracking, Google Analytics 4, Google Tag Manager, Meta Ads, Google Ads, A/B Testing, Conversion Rate Optimization, Product Management, Marketing Automation, Behavioral Data Analysis
 - **Location**: Torino, Italia
 
 ## Pubblicazioni accademiche
