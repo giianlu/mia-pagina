@@ -448,7 +448,6 @@
       .hero-lead { margin-bottom: 40px; }
       .hero-scroll { bottom: 24px; left: 28px; }
       .intro { padding: 64px 28px; grid-template-columns: 1fr; gap: 28px; }
-      .services-wrap { height: 250vh; }
       .services-pin, .services-track, .services-panel { height: 100svh; }
       .services-panel { padding: 0 28px 92px; }
       .services-panel .panel-num { margin-bottom: 14px; }
@@ -1133,7 +1132,7 @@
 
         function loop() {
           requestAnimationFrame(loop);
-          tx += (targetTx - tx) * (mqTrack.matches ? 0.16 : 0.09);
+          tx += (targetTx - tx) * (drag && drag.active ? 0.18 : 0.09);
           if (Math.abs(targetTx - tx) < 0.02) tx = targetTx;
           track.style.transform = 'translateX(' + (-tx) + 'vw)';
           progress.current = tx / 200;
@@ -1186,7 +1185,7 @@
             try { pin.setPointerCapture(e.pointerId); } catch (_) {}
             document.body.style.userSelect = 'none';
           }
-          hScroll(-(e.clientX - drag.x) * k());
+          hScroll(-(e.clientX - drag.x) * k() * (mqTrack.matches ? 2 : 1));
           drag.x = e.clientX; drag.y = e.clientY;
         });
         function endDrag() {
